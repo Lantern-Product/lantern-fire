@@ -1,0 +1,23 @@
+{
+  "name": "lantern-fire",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Lantern Fire Design System — shared UI primitives, tokens, and utilities.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "npm@10.9.0",
+  "engines": {
+    "node": ">=20"
+  }
+}
