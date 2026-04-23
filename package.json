@@ -4,15 +4,22 @@
   "private": true,
   "description": "Lantern Fire Design System — shared UI primitives, tokens, and utilities.",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "check:exports": "turbo run check:exports",
+    "test": "turbo run test",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "turbo run build && changeset publish",
     "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.31.0",
     "turbo": "^2.3.3",
     "typescript": "^5.7.0"
   },

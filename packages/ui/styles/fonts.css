@@ -1,0 +1,13 @@
+/*
+ * Optional Google Fonts stylesheet for Poppins and IBM Plex Mono.
+ *
+ * Import this ONLY in apps that cannot use next/font or a self-hosted strategy.
+ * Next.js apps should load fonts via next/font/google to enable automatic
+ * optimisation, self-hosting, and zero layout shift:
+ *
+ *   import { Poppins, IBM_Plex_Mono } from "next/font/google"
+ *
+ * Then pass the resulting className to <html> or <body> as needed, and set
+ * the --font-sans / --font-mono CSS variables to match.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
