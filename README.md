@@ -15,21 +15,17 @@ Shared design system for Lantern products — shadcn/ui primitives, design token
 
 ```
 lantern-fire/
-├── apps/
-│   └── docs/                → Component showcase (Ladle)
-├── packages/
-│   └── ui/                  → @lantern-fire/ui
-│       ├── src/
-│       │   ├── components/  shadcn/ui primitives
-│       │   ├── lib/         cn() utility
-│       │   ├── index.ts     barrel export (all non-chart components)
-│       │   └── chart.ts     chart-only barrel (imports recharts)
-│       ├── styles/
-│       │   ├── globals.css  tokens, @theme, base layer, .prose
-│       │   └── fonts.css    optional Google Fonts loader
-│       └── components.json  shadcn CLI config
-├── turbo.json
-└── package.json
+└── packages/
+    └── ui/                  → @lantern-fire/ui
+        ├── src/
+        │   ├── components/  shadcn/ui primitives
+        │   ├── lib/         cn() utility
+        │   ├── index.ts     barrel export (all non-chart components)
+        │   └── chart.ts     chart-only barrel (imports recharts)
+        ├── styles/
+        │   ├── globals.css  tokens, @theme, base layer, .prose
+        │   └── fonts.css    optional Google Fonts loader
+        └── components.json  shadcn CLI config
 ```
 
 ## Development
@@ -37,13 +33,6 @@ lantern-fire/
 ```sh
 npm install
 npm run build          # build all packages
-```
-
-### Run the component showcase
-
-```sh
-cd apps/docs
-npm run dev            # starts Ladle on http://localhost:61000
 ```
 
 ## Consuming
@@ -183,5 +172,4 @@ Always include a screen-reader label when using icon-only buttons:
 1. Run `npx shadcn add <component>` from `packages/ui/`.
 2. Fix any `src/lib/utils` → `../lib/utils` import paths (the CLI gets these wrong).
 3. Export from `packages/ui/src/index.ts`.
-4. Add a story in `apps/docs/src/`.
-5. Run `npm run build` to verify.
+4. Run `npm run build` to verify.

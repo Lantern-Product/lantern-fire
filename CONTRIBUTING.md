@@ -46,20 +46,7 @@ export * from "./components/your-component";
 
 If the component wraps a large third-party library (like recharts), consider a subpath export instead (see `packages/ui/src/chart.ts` as a reference).
 
-### 4. Write a story
-
-Add a story file in `apps/docs/src/your-component.stories.tsx`:
-
-```tsx
-import type { Story } from "@ladle/react";
-import { YourComponent } from "@lantern-fire/ui";
-
-export default { title: "Components/YourComponent" };
-
-export const Default: Story = () => <YourComponent />;
-```
-
-### 5. Build and check
+### 4. Build and check
 
 ```sh
 npm run build          # from repo root

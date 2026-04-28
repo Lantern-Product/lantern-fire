@@ -4,8 +4,7 @@
   "private": true,
   "description": "Lantern Fire Design System — shared UI primitives, tokens, and utilities.",
   "workspaces": [
-    "packages/*",
-    "apps/*"
+    "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
@@ -26,5 +25,11 @@
   "packageManager": "npm@10.9.0",
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "@lantern-fire/ui": "^0.0.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tailwindcss": "^4.2.4"
   }
 }
