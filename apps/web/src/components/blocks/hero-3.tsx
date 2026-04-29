@@ -21,9 +21,9 @@ type Hero3Props = {
 };
 
 const defaultLinks: HeroLink[] = [
-  { label: "Browse components", href: "/components" },
-  { label: "View tokens", href: "/tokens" },
-  { label: "Explore elements", href: "/elements" },
+  { label: "Components", href: "/components" },
+  { label: "Tokens", href: "/tokens" },
+  { label: "Elements", href: "/elements" },
 ];
 
 export function Hero3({
