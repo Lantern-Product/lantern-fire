@@ -60,16 +60,7 @@ npm i @lantern-product/ui
 npm i react react-dom tailwindcss
 ```
 
-#### Alternative: install from GitHub Packages
-
-Each release is also mirrored to GitHub Packages. To install from there instead, add a project-local `.npmrc`:
-
-```
-@lantern-product:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
-```
-
-Set `NODE_AUTH_TOKEN` to a GitHub PAT with `read:packages` scope, then `npm i @lantern-product/ui` as normal.
+> **Note:** Each release is also mirrored to GitHub Packages, but GitHub always requires authentication to install from `npm.pkg.github.com` — even for packages from public repositories. Use the npmjs.com install above unless you have a specific reason to use GitHub Packages and a GitHub PAT with `read:packages` scope available.
 
 ### Import styles (once, in your app root)
 
