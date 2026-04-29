@@ -292,7 +292,7 @@ export function Hero3({
 
   return (
     <section
-      className="relative w-full h-[clamp(600px,88vh,900px)] overflow-hidden bg-background"
+      className="relative w-full min-h-[88vh] max-h-[1200px] overflow-hidden bg-background"
       onMouseMove={handleMouseMove}
     >
       <canvas
@@ -301,7 +301,7 @@ export function Hero3({
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex h-full flex-col overflow-hidden bg-foreground/30 p-[4vmax]">
+      <div className="relative z-10 flex h-[88vh] max-h-[1200px] flex-col overflow-hidden bg-foreground/30 p-[4vmax]">
         <div className="relative w-full flex-1 overflow-hidden">
           <div className="flex justify-between p-[4vmax] text-[max(1rem,1.15vmax)] text-background/95">
             <div className="font-mono uppercase tracking-[0.18em] text-xs leading-tight sm:text-[max(0.78rem,0.95vmax)]">
