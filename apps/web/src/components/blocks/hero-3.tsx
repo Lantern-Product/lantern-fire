@@ -292,7 +292,7 @@ export function Hero3({
 
   return (
     <section
-      className="relative w-full h-[clamp(600px,88vh,900px)] overflow-hidden bg-background"
+      className="relative w-full h-[min(88vh,1000px)] overflow-hidden bg-background"
       onMouseMove={handleMouseMove}
     >
       <canvas
