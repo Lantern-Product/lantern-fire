@@ -2,6 +2,8 @@
 
 Shared design system for Lantern products — shadcn/ui primitives, design tokens, and utilities in a single consumable package.
 
+**GitHub:** [Lantern-Product/lantern-fire](https://github.com/Lantern-Product/lantern-fire) · **Registry:** `@lantern-product` on GitHub Packages · **Node:** ≥ 20
+
 ## Stack
 
 - Tailwind CSS v4 (CSS-first, no config file)
@@ -57,7 +59,6 @@ The docs site is a Next.js 16 App Router app that consumes `@lantern-product/ui`
 ```
 @lantern-product:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
-always-auth=true
 ```
 
 **2. Set `NODE_AUTH_TOKEN`** to a GitHub Personal Access Token (classic) with at least the `read:packages` scope, or a fine-grained token with read access to the `Lantern-Product` org's packages.
