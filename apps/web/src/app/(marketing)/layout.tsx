@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@lantern-fire/ui";
+import { LanternMark } from "@/components/lantern-mark";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
@@ -7,7 +8,8 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
     <div className="relative min-h-screen bg-background">
       <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
-          <Link href="/" className="flex items-baseline gap-2">
+          <Link href="/" className="flex items-center gap-2.5">
+            <LanternMark className="h-7 w-auto" />
             <span className="font-heading text-base font-semibold tracking-tight">
               Lantern Fire
             </span>

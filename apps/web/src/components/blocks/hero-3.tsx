@@ -91,10 +91,11 @@ export function Hero3({
       }
     `;
 
-    // Warm Lantern Fire palette: amber/coral primary (oklch ~30 hue) with subtle
-    // teal cool-shift from the secondary token. Base + modulator factors tuned to
-    // match --primary oklch(0.68 0.21 30) without sampling at runtime so the
-    // shader stays GPU-resident.
+    // Soft coral palette: pink-peach mean tuned by eye (steady-state ~rgb(232,
+    // 149, 122)) rather than sampled from --primary, so the shader stays
+    // GPU-resident. Base lifts shadowed regions toward warm pink-brown while
+    // the green/blue modulators add the lift that distinguishes coral from
+    // straight amber.
     const fragmentShader = `
       varying vec2 vUv;
       uniform vec2 uViewportRes;
@@ -225,10 +226,10 @@ export function Hero3({
         uViewportRes: {
           value: new THREE.Vector2(parent.clientWidth, parent.clientHeight),
         },
-        uBaseColor: { value: new THREE.Vector3(0.42, 0.18, 0.12) },
-        uRedFactor: { value: 0.85 },
-        uGreenFactor: { value: 0.4 },
-        uBlueFactor: { value: 0.18 },
+        uBaseColor: { value: new THREE.Vector3(0.46, 0.24, 0.2) },
+        uRedFactor: { value: 0.78 },
+        uGreenFactor: { value: 0.46 },
+        uBlueFactor: { value: 0.3 },
         uMouse: { value: mouseUniform },
       },
     });

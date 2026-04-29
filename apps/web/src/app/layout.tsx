@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins, IBM_Plex_Mono } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
@@ -17,9 +17,54 @@ const mono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://design.lantern.codes";
+
 export const metadata: Metadata = {
-  title: "Lantern Fire — Design System",
-  description: "Component showcase and documentation for @lantern-fire/ui.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Lantern Fire — Design System",
+    template: "%s · Lantern Fire",
+  },
+  description:
+    "A design system for Lantern products. shadcn/ui primitives, OKLCH design tokens, and utilities — packaged as @lantern-fire/ui.",
+  applicationName: "Lantern Fire",
+  keywords: [
+    "design system",
+    "shadcn/ui",
+    "Tailwind",
+    "OKLCH",
+    "Lantern",
+    "React",
+  ],
+  authors: [{ name: "Lantern" }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Lantern Fire",
+    url: SITE_URL,
+    title: "Lantern Fire — Design System",
+    description:
+      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-fire/ui.",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lantern Fire — Design System",
+    description:
+      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-fire/ui.",
+  },
+  robots: { index: true, follow: true },
+};
+
+// sRGB approximations of --background light (oklch(0.98 0.02 90)) and
+// dark (oklch(0.18 0.03 55)) from packages/ui/styles/globals.css.
+// <meta name="theme-color"> can't carry oklch().
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fef9f0" },
+    { media: "(prefers-color-scheme: dark)", color: "#211a13" },
+  ],
 };
 
 export default function RootLayout({

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Badge,
@@ -18,6 +19,28 @@ import {
 } from "lucide-react";
 import { Hero3 } from "@/components/blocks/hero-3";
 import { CodeBlock } from "@/components/code-block";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Lantern Fire — Design System",
+  },
+  description:
+    "A design system for Lantern products. shadcn/ui primitives, OKLCH design tokens, and utilities — packaged as @lantern-fire/ui.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    title: "Lantern Fire — Design System",
+    description:
+      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-fire/ui.",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lantern Fire — Design System",
+    description:
+      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-fire/ui.",
+  },
+};
 
 const features = [
   {
