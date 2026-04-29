@@ -2,7 +2,7 @@
 
 Shared design system for Lantern products — shadcn/ui primitives, design tokens, and utilities in a single consumable package.
 
-**GitHub:** [Lantern-Product/lantern-fire](https://github.com/Lantern-Product/lantern-fire) · **Registry:** `@lantern-product` on GitHub Packages · **Node:** ≥ 20
+**GitHub:** [Lantern-Product/lantern-fire](https://github.com/Lantern-Product/lantern-fire) · **Registry:** `@lantern-product` on [npmjs.com](https://www.npmjs.com/package/@lantern-product/ui) (mirrored to GitHub Packages) · **Node:** ≥ 20
 
 ## Stack
 
@@ -52,24 +52,24 @@ The docs site is a Next.js 16 App Router app that consumes `@lantern-product/ui`
 
 ### Installation
 
-`@lantern-product/ui` is published to **GitHub Packages** (private registry). Consumers need to authenticate.
-
-**1. Create an `.npmrc` in the consuming project:**
-
-```
-@lantern-product:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
-```
-
-**2. Set `NODE_AUTH_TOKEN`** to a GitHub Personal Access Token (classic) with at least the `read:packages` scope, or a fine-grained token with read access to the `Lantern-Product` org's packages.
-
-**3. Install:**
+`@lantern-product/ui` is published publicly on [npmjs.com](https://www.npmjs.com/package/@lantern-product/ui) — no authentication required.
 
 ```sh
 npm i @lantern-product/ui
 # peer deps if not already present:
 npm i react react-dom tailwindcss
 ```
+
+#### Alternative: install from GitHub Packages
+
+Each release is also mirrored to GitHub Packages. To install from there instead, add a project-local `.npmrc`:
+
+```
+@lantern-product:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+```
+
+Set `NODE_AUTH_TOKEN` to a GitHub PAT with `read:packages` scope, then `npm i @lantern-product/ui` as normal.
 
 ### Import styles (once, in your app root)
 
@@ -114,7 +114,7 @@ The entire `@lantern-product/ui` bundle is marked `"use client"`. This means:
 ```ts
 import { DM_Sans, Poppins, IBM_Plex_Mono } from "next/font/google";
 
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["300","400","500","600"], axes: ["opsz"], variable: "--font-sans" });
+const dmSans = DM_Sans({ subsets: ["latin"], weight: "variable", axes: ["opsz"], variable: "--font-sans" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["300","400","500","600","700"], variable: "--font-heading" });
 const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400","500"], variable: "--font-mono" });
 ```
