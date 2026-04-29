@@ -81,7 +81,9 @@ const stack = [
 export default function LandingPage() {
   return (
     <>
-      <Hero3 />
+      <div className="mx-auto max-w-6xl px-6 pt-6">
+        <Hero3 />
+      </div>
 
       <section className="border-t border-border bg-background">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
@@ -126,9 +128,17 @@ export default function LandingPage() {
               Drop it into any React 18.3+ app.
             </h2>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              Install the package, import the design tokens once, and start using primitives.
-              Tailwind v4 picks up the workspace source automatically — no codegen, no
-              build steps.
+              Published publicly on{" "}
+              <a
+                href="https://www.npmjs.com/package/@lantern-product/ui"
+                target="_blank"
+                rel="noreferrer"
+                className="text-primary underline underline-offset-2 hover:text-primary/80"
+              >
+                npmjs.com
+              </a>
+              {" "}— no authentication required. Install the package, import the design tokens once,
+              and start using primitives. Tailwind v4 picks up the workspace source automatically — no codegen, no build steps.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {stack.map((item) => (
