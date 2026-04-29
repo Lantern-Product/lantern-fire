@@ -1,4 +1,4 @@
-import { Badge } from "@lantern-fire/ui";
+import { Badge } from "@lantern-product/ui";
 import { PageStage } from "../shared";
 
 export function CardWithImageOverlay() {

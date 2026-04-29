@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from "@lantern-fire/ui";
+import { Button, ButtonGroup } from "@lantern-product/ui";
 import {
   AlignCenterIcon,
   AlignLeftIcon,

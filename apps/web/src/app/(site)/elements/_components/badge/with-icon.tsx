@@ -1,4 +1,4 @@
-import { Badge } from "@lantern-fire/ui";
+import { Badge } from "@lantern-product/ui";
 import { CheckIcon, ClockIcon, StarIcon, ZapIcon } from "lucide-react";
 import { ShowcaseFrame } from "../shared";
 

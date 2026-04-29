@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, Button } from "@lantern-fire/ui";
+import { Avatar, AvatarFallback, Button } from "@lantern-product/ui";
 
 export function CardWithAvatarAndActions() {
   return (

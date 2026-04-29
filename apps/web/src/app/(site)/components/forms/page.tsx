@@ -27,7 +27,7 @@ import {
   FieldSet,
   FieldLegend,
   Calendar,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { Demo } from "@/components/demo";
 import { PageHeader } from "@/components/page-header";
 

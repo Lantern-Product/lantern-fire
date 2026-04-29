@@ -1,8 +1,8 @@
 {
-  "name": "@lantern-fire/web",
+  "name": "@lantern-product/web",
   "version": "0.1.0",
   "private": true,
-  "description": "Component showcase and docs for @lantern-fire/ui.",
+  "description": "Component showcase and docs for @lantern-product/ui.",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@lantern-fire/ui": "*",
+    "@lantern-product/ui": "*",
     "lucide-react": "^1.12.0",
     "motion": "^12.38.0",
     "next": "^16.2.4",

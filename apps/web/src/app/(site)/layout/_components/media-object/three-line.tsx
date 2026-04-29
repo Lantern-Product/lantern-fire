@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback } from "@lantern-fire/ui";
+import { Avatar, AvatarFallback } from "@lantern-product/ui";
 import { PageStage } from "../shared";
 
 export function MediaObjectThreeLine() {

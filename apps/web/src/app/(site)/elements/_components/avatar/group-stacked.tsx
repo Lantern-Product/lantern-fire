@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarGroup } from "@lantern-fire/ui";
+import { Avatar, AvatarFallback, AvatarGroup } from "@lantern-product/ui";
 import { ShowcaseFrame, teamMembers } from "../shared";
 
 export function AvatarGroupStacked() {

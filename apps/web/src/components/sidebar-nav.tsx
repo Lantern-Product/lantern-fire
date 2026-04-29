@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { ScrollArea } from "@lantern-fire/ui";
-import { cn } from "@lantern-fire/ui/utils";
+import { ScrollArea } from "@lantern-product/ui";
+import { cn } from "@lantern-product/ui/utils";
 
 type NavItem = { label: string; href: string };
 type NavSection = { label: string; items: NavItem[] };

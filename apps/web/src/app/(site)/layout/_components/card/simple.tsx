@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@lantern-fire/ui";
+import { Card, CardContent } from "@lantern-product/ui";
 import { ContentBars, PageStage } from "../shared";
 
 export function CardSimple() {

@@ -8,7 +8,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import {
   ArrowRightIcon,
   BlocksIcon,
@@ -25,20 +25,20 @@ export const metadata: Metadata = {
     absolute: "Lantern Fire — Design System",
   },
   description:
-    "A design system for Lantern products. shadcn/ui primitives, OKLCH design tokens, and utilities — packaged as @lantern-fire/ui.",
+    "A design system for Lantern products. shadcn/ui primitives, OKLCH design tokens, and utilities — packaged as @lantern-product/ui.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     title: "Lantern Fire — Design System",
     description:
-      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-fire/ui.",
+      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-product/ui.",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
     title: "Lantern Fire — Design System",
     description:
-      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-fire/ui.",
+      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-product/ui.",
   },
 };
 
@@ -95,7 +95,7 @@ export default function LandingPage() {
             <p className="mt-4 text-base text-muted-foreground leading-relaxed">
               A shared design language for every Lantern product. Consume it as{" "}
               <code className="rounded-sm bg-muted px-1.5 py-0.5 font-mono text-sm">
-                @lantern-fire/ui
+                @lantern-product/ui
               </code>
               , override what you need, and stay in sync as the system evolves.
             </p>
@@ -143,23 +143,23 @@ export default function LandingPage() {
               <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
                 1. Install
               </p>
-              <CodeBlock>{`npm install @lantern-fire/ui`}</CodeBlock>
+              <CodeBlock>{`npm install @lantern-product/ui`}</CodeBlock>
             </div>
             <div>
               <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
                 2. Import tokens
               </p>
               <CodeBlock>{`/* app/globals.css */
-@import "@lantern-fire/ui/styles";
+@import "@lantern-product/ui/styles";
 
 /* Monorepo? Tell Tailwind to scan the package source: */
-@source "../../../node_modules/@lantern-fire/ui/dist";`}</CodeBlock>
+@source "../../../node_modules/@lantern-product/ui/dist";`}</CodeBlock>
             </div>
             <div>
               <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
                 3. Use components
               </p>
-              <CodeBlock>{`import { Button, Card, cn } from "@lantern-fire/ui";
+              <CodeBlock>{`import { Button, Card, cn } from "@lantern-product/ui";
 
 export function Example() {
   return <Button>Click me</Button>;
@@ -263,7 +263,7 @@ export function Example() {
       <footer className="border-t border-border bg-background">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 text-xs text-muted-foreground sm:flex-row">
           <p>Lantern Fire v0.1.0 — A design system for Lantern products.</p>
-          <p>Built with @lantern-fire/ui, Next.js 16, and Tailwind v4.</p>
+          <p>Built with @lantern-product/ui, Next.js 16, and Tailwind v4.</p>
         </div>
       </footer>
     </>

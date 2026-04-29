@@ -6,7 +6,7 @@ import {
   Tabs,
   TabsList,
   TabsTrigger,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { BrandMark, ContentPlaceholder, navItems } from "../shared";
 
 export function StackedWithTabs() {

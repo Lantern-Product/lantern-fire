@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, Button } from "@lantern-fire/ui";
+import { Avatar, AvatarFallback, Button } from "@lantern-product/ui";
 import { listItems, PageStage } from "../shared";
 
 export function MediaObjectWithActions() {

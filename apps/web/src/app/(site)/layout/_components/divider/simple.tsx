@@ -1,4 +1,4 @@
-import { Separator } from "@lantern-fire/ui";
+import { Separator } from "@lantern-product/ui";
 import { ContentBars, PageStage } from "../shared";
 
 export function DividerSimple() {

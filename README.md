@@ -16,9 +16,9 @@ Shared design system for Lantern products — shadcn/ui primitives, design token
 ```
 lantern-fire/
 ├── apps/
-│   └── web/                 → @lantern-fire/web (Next.js docs site)
+│   └── web/                 → @lantern-product/web (Next.js docs site)
 └── packages/
-    └── ui/                  → @lantern-fire/ui
+    └── ui/                  → @lantern-product/ui
         ├── src/
         │   ├── components/  shadcn/ui primitives
         │   ├── lib/         cn() utility
@@ -44,14 +44,28 @@ cd apps/web
 npm run dev            # http://localhost:3000
 ```
 
-The docs site is a Next.js 16 App Router app that consumes `@lantern-fire/ui` directly from the workspace. It serves as both a component showcase and the canonical reference for design tokens.
+The docs site is a Next.js 16 App Router app that consumes `@lantern-product/ui` directly from the workspace. It serves as both a component showcase and the canonical reference for design tokens.
 
 ## Consuming
 
 ### Installation
 
+`@lantern-product/ui` is published to **GitHub Packages** (private registry). Consumers need to authenticate.
+
+**1. Create an `.npmrc` in the consuming project:**
+
+```
+@lantern-product:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+always-auth=true
+```
+
+**2. Set `NODE_AUTH_TOKEN`** to a GitHub Personal Access Token (classic) with at least the `read:packages` scope, or a fine-grained token with read access to the `Lantern-Product` org's packages.
+
+**3. Install:**
+
 ```sh
-npm i @lantern-fire/ui
+npm i @lantern-product/ui
 # peer deps if not already present:
 npm i react react-dom tailwindcss
 ```
@@ -59,7 +73,7 @@ npm i react react-dom tailwindcss
 ### Import styles (once, in your app root)
 
 ```ts
-import "@lantern-fire/ui/styles";
+import "@lantern-product/ui/styles";
 ```
 
 This imports the OKLCH design tokens, Tailwind v4 base layer, and the `.prose` typography helper. It does **not** load any fonts — see the [Font loading](#font-loading) section.
@@ -67,10 +81,10 @@ This imports the OKLCH design tokens, Tailwind v4 base layer, and the `.prose` t
 ### Import components
 
 ```ts
-import { Button, Card, cn } from "@lantern-fire/ui";
+import { Button, Card, cn } from "@lantern-product/ui";
 
 // Charts are a separate subpath to avoid bundling recharts for non-chart consumers:
-import { ChartContainer, ChartTooltip } from "@lantern-fire/ui/chart";
+import { ChartContainer, ChartTooltip } from "@lantern-product/ui/chart";
 ```
 
 ### Dark mode
@@ -85,8 +99,8 @@ The `@custom-variant dark (&:is(.dark *))` rule means every child of `.dark` get
 
 ### "use client" boundary
 
-The entire `@lantern-fire/ui` bundle is marked `"use client"`. This means:
-- In Next.js App Router, you can import from `@lantern-fire/ui` in any file, but only inside a component tree that has a client boundary above it, **or** from a file that is itself a client component.
+The entire `@lantern-product/ui` bundle is marked `"use client"`. This means:
+- In Next.js App Router, you can import from `@lantern-product/ui` in any file, but only inside a component tree that has a client boundary above it, **or** from a file that is itself a client component.
 - Server Components that only need `cn` or variant constants should still work since those are pure functions — but they will be bundled as client code.
 - If you need a truly server-safe `cn`, copy the `cn` utility locally from `src/lib/utils.ts`.
 
@@ -108,7 +122,7 @@ Then add `className={`${poppins.variable} ${mono.variable}`}` to your `<html>` e
 **Option B — optional Google Fonts CSS (non-Next.js):**
 
 ```ts
-import "@lantern-fire/ui/fonts";
+import "@lantern-product/ui/fonts";
 ```
 
 This imports the Google Fonts `@import url(...)` directly. It is a blocking network request and disables font optimisation — use only when `next/font` is unavailable.
@@ -163,7 +177,7 @@ Use as Tailwind classes: `text-status-green`, `bg-status-amber`, etc.
 `Alert` · `Skeleton` · `Progress` · `Toaster` (Sonner)
 
 ### Data
-`Table` · `Avatar` · `Carousel` (Embla) · `ChartContainer` · `ChartTooltip` · `ChartLegend` (from `@lantern-fire/ui/chart`)
+`Table` · `Avatar` · `Carousel` (Embla) · `ChartContainer` · `ChartTooltip` · `ChartLegend` (from `@lantern-product/ui/chart`)
 
 ### Typography
 `.prose` — apply to a container with rendered markdown for consistent typographic styles.

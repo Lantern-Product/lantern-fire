@@ -1,6 +1,6 @@
 "use client";
 
-import { Label, Switch } from "@lantern-fire/ui";
+import { Label, Switch } from "@lantern-product/ui";
 
 export function SectionWithToggle() {
   return (

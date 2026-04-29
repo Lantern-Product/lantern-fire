@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Button } from "@lantern-fire/ui";
+import { Button } from "@lantern-product/ui";
 import { MoonIcon, SunIcon } from "lucide-react";
 
 export function ThemeToggle() {

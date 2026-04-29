@@ -4,7 +4,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { FauxImage, PageStage } from "../shared";
 
 export function CardWithImage() {

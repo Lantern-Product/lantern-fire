@@ -1,4 +1,4 @@
-import { Badge } from "@lantern-fire/ui";
+import { Badge } from "@lantern-product/ui";
 import { ShowcaseFrame } from "../shared";
 
 export function BadgeDefault() {

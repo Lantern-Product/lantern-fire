@@ -3,7 +3,7 @@ import {
   AvatarFallback,
   AvatarGroup,
   AvatarGroupCount,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { ShowcaseFrame, teamMembers } from "../shared";
 
 export function AvatarGroupWithCounter() {

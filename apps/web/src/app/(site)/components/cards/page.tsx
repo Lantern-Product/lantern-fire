@@ -29,7 +29,7 @@ import {
   ResizableHandle,
   Avatar,
   AvatarFallback,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { FolderIcon, PlusIcon, FileTextIcon, ChevronRightIcon } from "lucide-react";
 import { Demo } from "@/components/demo";
 import { PageHeader } from "@/components/page-header";

@@ -1,9 +1,22 @@
 {
-  "name": "@lantern-fire/ui",
+  "name": "@lantern-product/ui",
   "version": "0.1.0",
   "description": "Lantern Fire Design System — shadcn/ui primitives, tokens, and utilities.",
   "license": "UNLICENSED",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lantern-Product/lantern-fire.git",
+    "directory": "packages/ui"
+  },
+  "homepage": "https://github.com/Lantern-Product/lantern-fire#readme",
+  "bugs": {
+    "url": "https://github.com/Lantern-Product/lantern-fire/issues"
+  },
   "sideEffects": [
     "**/*.css"
   ],

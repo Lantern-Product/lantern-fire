@@ -1,4 +1,4 @@
-import { Input } from "@lantern-fire/ui";
+import { Input } from "@lantern-product/ui";
 import { SearchIcon } from "lucide-react";
 
 export function SectionWithInputGroup() {

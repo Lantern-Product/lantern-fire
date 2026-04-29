@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@lantern-fire/ui";
+import { Card, CardContent, CardHeader } from "@lantern-product/ui";
 import { ContentBars, PageStage } from "../shared";
 
 export function CardWithTabs() {

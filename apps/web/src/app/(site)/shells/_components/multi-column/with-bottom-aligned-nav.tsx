@@ -8,7 +8,7 @@ import {
   HelpCircleIcon,
   LogOutIcon,
 } from "lucide-react";
-import { Avatar, AvatarFallback } from "@lantern-fire/ui";
+import { Avatar, AvatarFallback } from "@lantern-product/ui";
 import { BrandMark, ContentPlaceholder, StatGrid } from "../shared";
 
 const main = [

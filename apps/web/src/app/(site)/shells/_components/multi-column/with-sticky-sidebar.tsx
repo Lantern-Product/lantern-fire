@@ -1,5 +1,5 @@
 import { BellIcon } from "lucide-react";
-import { Avatar, AvatarFallback, Button } from "@lantern-fire/ui";
+import { Avatar, AvatarFallback, Button } from "@lantern-product/ui";
 import { ContentPlaceholder, StatGrid, BrandMark, navItems } from "../shared";
 
 export function MultiColumnWithStickySidebar() {

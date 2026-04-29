@@ -5,7 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 
 export const breadcrumbItems = [
   { name: "Projects", href: "#" },

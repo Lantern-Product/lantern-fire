@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@lantern-fire/ui";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@lantern-product/ui";
 import { ArrowRightIcon } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Alert, AlertTitle, AlertDescription, Skeleton, Progress, Button, Toaster } from "@lantern-fire/ui";
+import { Alert, AlertTitle, AlertDescription, Skeleton, Progress, Button, Toaster } from "@lantern-product/ui";
 import { toast } from "sonner";
 import { InfoIcon, TriangleAlertIcon, CircleCheckIcon } from "lucide-react";
 import { Demo } from "@/components/demo";

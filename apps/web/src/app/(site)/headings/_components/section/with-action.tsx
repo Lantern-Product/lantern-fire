@@ -1,4 +1,4 @@
-import { Button } from "@lantern-fire/ui";
+import { Button } from "@lantern-product/ui";
 import { PlusIcon } from "lucide-react";
 
 export function SectionWithAction() {

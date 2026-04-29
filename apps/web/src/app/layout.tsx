@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s · Lantern Fire",
   },
   description:
-    "A design system for Lantern products. shadcn/ui primitives, OKLCH design tokens, and utilities — packaged as @lantern-fire/ui.",
+    "A design system for Lantern products. shadcn/ui primitives, OKLCH design tokens, and utilities — packaged as @lantern-product/ui.",
   applicationName: "Lantern Fire",
   keywords: [
     "design system",
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "Lantern Fire — Design System",
     description:
-      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-fire/ui.",
+      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-product/ui.",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "Lantern Fire — Design System",
     description:
-      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-fire/ui.",
+      "shadcn/ui primitives, OKLCH design tokens, and utilities packaged as @lantern-product/ui.",
   },
   robots: { index: true, follow: true },
 };

@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback } from "@lantern-fire/ui";
+import { Avatar, AvatarFallback } from "@lantern-product/ui";
 import { BrandMark } from "../shared";
 import { sidebarNavItems } from "./_nav";
 

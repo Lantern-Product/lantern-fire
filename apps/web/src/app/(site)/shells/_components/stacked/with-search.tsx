@@ -6,7 +6,7 @@ import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { BrandMark, ContentPlaceholder, StatGrid, navItems } from "../shared";
 
 export function StackedWithSearch() {

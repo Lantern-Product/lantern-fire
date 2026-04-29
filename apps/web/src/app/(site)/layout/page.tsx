@@ -5,7 +5,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { ArrowRightIcon } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { byCategory, categoryMeta } from "./_registry";

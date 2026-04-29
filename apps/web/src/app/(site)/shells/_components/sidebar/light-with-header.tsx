@@ -6,7 +6,7 @@ import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { ContentPlaceholder, StatGrid } from "../shared";
 import { FullSidebar } from "./_full-sidebar";
 

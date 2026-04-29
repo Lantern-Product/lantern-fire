@@ -1,5 +1,5 @@
 import { BellIcon } from "lucide-react";
-import { Button, Avatar, AvatarFallback } from "@lantern-fire/ui";
+import { Button, Avatar, AvatarFallback } from "@lantern-product/ui";
 import { BrandMark, ContentPlaceholder, StatGrid, navItems } from "../shared";
 
 export function StackedDarkNav() {

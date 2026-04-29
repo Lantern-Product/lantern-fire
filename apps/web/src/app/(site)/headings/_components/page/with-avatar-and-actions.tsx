@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, Button } from "@lantern-fire/ui";
+import { Avatar, AvatarFallback, Button } from "@lantern-product/ui";
 import { MailIcon, PhoneIcon } from "lucide-react";
 
 export function PageWithAvatarAndActions() {

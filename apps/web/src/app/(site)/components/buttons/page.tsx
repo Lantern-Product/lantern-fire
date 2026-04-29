@@ -10,7 +10,7 @@ import {
   Kbd,
   KbdGroup,
   Spinner,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import {
   PlusIcon,
   TrashIcon,

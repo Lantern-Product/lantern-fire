@@ -5,7 +5,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { listItems, PageStage } from "../shared";
 
 export function CardWithList() {

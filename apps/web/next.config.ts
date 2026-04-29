@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@lantern-fire/ui"],
+  transpilePackages: ["@lantern-product/ui"],
 };
 
 export default nextConfig;

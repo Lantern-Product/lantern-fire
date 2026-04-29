@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import { Button } from "@lantern-fire/ui";
+import { Button } from "@lantern-product/ui";
 
 type HeroLink = {
   label: string;

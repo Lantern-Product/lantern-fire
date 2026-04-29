@@ -43,7 +43,7 @@ import {
   SidebarMenuButton,
   SidebarTrigger,
   SidebarInset,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { ChevronsUpDownIcon, HomeIcon, InboxIcon, SettingsIcon } from "lucide-react";
 import { Demo } from "@/components/demo";
 import { PageHeader } from "@/components/page-header";
@@ -239,7 +239,7 @@ export default function NavigationPage() {
       >
         <Collapsible className="w-full max-w-md space-y-2">
           <div className="flex items-center justify-between gap-4 rounded-md border border-border px-4 py-2">
-            <span className="text-sm font-medium">@lantern-fire/ui peer dependencies</span>
+            <span className="text-sm font-medium">@lantern-product/ui peer dependencies</span>
             <CollapsibleTrigger asChild>
               <Button variant="ghost" size="icon-sm" aria-label="Toggle">
                 <ChevronsUpDownIcon />

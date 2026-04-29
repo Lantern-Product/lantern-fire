@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { EllipsisVerticalIcon } from "lucide-react";
 import { ContentBars, PageStage } from "../shared";
 

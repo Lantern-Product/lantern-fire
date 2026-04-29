@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, Card, CardContent } from "@lantern-fire/ui";
+import { Avatar, AvatarFallback, Card, CardContent } from "@lantern-product/ui";
 import { ChevronRightIcon } from "lucide-react";
 import { listItems, PageStage } from "../shared";
 

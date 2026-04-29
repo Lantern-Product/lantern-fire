@@ -1,5 +1,5 @@
 import { BellIcon, FilterIcon, ListFilterIcon } from "lucide-react";
-import { Button, Avatar, AvatarFallback } from "@lantern-fire/ui";
+import { Button, Avatar, AvatarFallback } from "@lantern-product/ui";
 import { BrandMark, ContentPlaceholder, navItems } from "../shared";
 
 export function StackedWithSecondaryHeader() {

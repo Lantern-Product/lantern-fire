@@ -1,4 +1,4 @@
-import { cn } from "@lantern-fire/ui/utils";
+import { cn } from "@lantern-product/ui/utils";
 
 export function CodeBlock({
   children,

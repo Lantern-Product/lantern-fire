@@ -15,7 +15,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { Demo } from "@/components/demo";
 import { PageHeader } from "@/components/page-header";
 
@@ -31,7 +31,7 @@ export default function DataPage() {
       <PageHeader
         eyebrow="Components"
         title="Data display"
-        description="Surfaces for tabular data and identity. Charts ship from a separate subpath: @lantern-fire/ui/chart."
+        description="Surfaces for tabular data and identity. Charts ship from a separate subpath: @lantern-product/ui/chart."
       />
 
       <Demo title="Table">

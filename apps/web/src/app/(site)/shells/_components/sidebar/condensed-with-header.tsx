@@ -9,7 +9,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
   Button,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { ContentPlaceholder, StatGrid } from "../shared";
 import { CondensedRail } from "./_condensed-rail";
 

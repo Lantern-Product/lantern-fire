@@ -64,7 +64,7 @@ export default async function OGImage() {
           </div>
           <div style={{ fontSize: 30, opacity: 0.85, maxWidth: 920 }}>
             shadcn/ui primitives, OKLCH tokens, and utilities — packaged as
-            @lantern-fire/ui.
+            @lantern-product/ui.
           </div>
         </div>
 
@@ -79,7 +79,7 @@ export default async function OGImage() {
         >
           <span>design.lantern.codes</span>
           <span style={{ fontFamily: "ui-monospace, SFMono-Regular, monospace" }}>
-            npm install @lantern-fire/ui
+            npm install @lantern-product/ui
           </span>
         </div>
       </div>

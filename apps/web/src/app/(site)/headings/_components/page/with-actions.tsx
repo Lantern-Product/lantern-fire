@@ -1,4 +1,4 @@
-import { Button } from "@lantern-fire/ui";
+import { Button } from "@lantern-product/ui";
 
 export function PageWithActions() {
   return (

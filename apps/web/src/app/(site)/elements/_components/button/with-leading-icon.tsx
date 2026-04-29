@@ -1,4 +1,4 @@
-import { Button } from "@lantern-fire/ui";
+import { Button } from "@lantern-product/ui";
 import { DownloadIcon, PlusIcon, SendIcon, UploadIcon } from "lucide-react";
 import { ShowcaseFrame } from "../shared";
 

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@lantern-fire/ui";
-import { cn } from "@lantern-fire/ui/utils";
+import { Button } from "@lantern-product/ui";
+import { cn } from "@lantern-product/ui/utils";
 import { CodeIcon, EyeIcon } from "lucide-react";
 
 type DemoProps = {

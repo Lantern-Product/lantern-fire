@@ -5,7 +5,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@lantern-fire/ui";
+} from "@lantern-product/ui";
 import { ContentBars, PageStage } from "../shared";
 
 export function CardWithHeaderAndFooter() {
