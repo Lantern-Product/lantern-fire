@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 import { ScrollArea } from "@lantern-fire/ui";
 import { cn } from "@lantern-fire/ui/utils";
 
@@ -38,13 +39,51 @@ const sections: NavSection[] = [
       { label: "Multi-column", href: "/shells/multi-column" },
     ],
   },
+  {
+    label: "Headings",
+    items: [
+      { label: "Overview", href: "/headings" },
+      { label: "Page headings", href: "/headings/page" },
+      { label: "Card headings", href: "/headings/card" },
+      { label: "Section headings", href: "/headings/section" },
+    ],
+  },
+  {
+    label: "Elements",
+    items: [
+      { label: "Overview", href: "/elements" },
+      { label: "Avatars", href: "/elements/avatar" },
+      { label: "Badges", href: "/elements/badge" },
+      { label: "Dropdowns", href: "/elements/dropdown" },
+      { label: "Buttons", href: "/elements/button" },
+      { label: "Button groups", href: "/elements/button-group" },
+    ],
+  },
+  {
+    label: "Layout",
+    items: [
+      { label: "Overview", href: "/layout" },
+      { label: "Containers", href: "/layout/container" },
+      { label: "Cards", href: "/layout/card" },
+      { label: "List containers", href: "/layout/list-container" },
+      { label: "Media objects", href: "/layout/media-object" },
+      { label: "Dividers", href: "/layout/divider" },
+    ],
+  },
 ];
 
 export function SidebarNav() {
   const pathname = usePathname();
+  const activeRef = useRef<HTMLAnchorElement | null>(null);
+
+  useEffect(() => {
+    activeRef.current?.scrollIntoView({ block: "nearest", behavior: "auto" });
+  }, [pathname]);
 
   return (
-    <ScrollArea className="flex-1">
+    <ScrollArea
+      className="flex-1 min-h-0 [&>[data-slot=scroll-area-viewport]]:[mask-image:linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-20px),transparent)]"
+    >
       <nav className="px-3 pb-6">
         {sections.map((section) => (
           <div key={section.label} className="mt-4 first:mt-2">
@@ -58,6 +97,7 @@ export function SidebarNav() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
+                      ref={active ? activeRef : undefined}
                       className={cn(
                         "block rounded-md px-2 py-1.5 text-sm transition-colors",
                         active
