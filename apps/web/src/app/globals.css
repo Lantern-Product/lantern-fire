@@ -1,0 +1,5 @@
+@import "@lantern-fire/ui/styles";
+
+/* Scan workspace package source so Tailwind v4 generates utility classes
+   used inside @lantern-fire/ui components. Path is relative to this file. */
+@source "../../../../packages/ui/src";

@@ -1,10 +1,11 @@
 {
   "name": "lantern-fire",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Lantern Fire Design System — shared UI primitives, tokens, and utilities.",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
     "build": "turbo run build",
@@ -27,7 +28,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@lantern-fire/ui": "^0.0.1",
+    "@lantern-fire/ui": "^0.1.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "tailwindcss": "^4.2.4"

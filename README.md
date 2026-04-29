@@ -15,6 +15,8 @@ Shared design system for Lantern products — shadcn/ui primitives, design token
 
 ```
 lantern-fire/
+├── apps/
+│   └── web/                 → @lantern-fire/web (Next.js docs site)
 └── packages/
     └── ui/                  → @lantern-fire/ui
         ├── src/
@@ -32,8 +34,17 @@ lantern-fire/
 
 ```sh
 npm install
-npm run build          # build all packages
+npm run build          # build all packages and apps
 ```
+
+### Run the docs site
+
+```sh
+cd apps/web
+npm run dev            # http://localhost:3000
+```
+
+The docs site is a Next.js 16 App Router app that consumes `@lantern-fire/ui` directly from the workspace. It serves as both a component showcase and the canonical reference for design tokens.
 
 ## Consuming
 
@@ -134,25 +145,25 @@ Use as Tailwind classes: `text-status-green`, `bg-status-amber`, etc.
 ## Component catalog
 
 ### Form primitives
-`Input` `Textarea` `Label` `Checkbox` `RadioGroup` `Switch` `Select` `Form`
+`Input` `Textarea` `Label` `Checkbox` `RadioGroup` `Switch` `Select` `NativeSelect` `Slider` `Field` (`FieldLabel`, `FieldDescription`, `FieldError`, `FieldGroup`, `FieldSet`, `FieldLegend`) · `Calendar` · `Form`
 
 ### Buttons & indicators
-`Button` (variants: default, outline, secondary, ghost, destructive, destructive-solid, link) · `Badge`
+`Button` (variants: default, outline, secondary, ghost, destructive, destructive-solid, link) · `ButtonGroup` · `Toggle` · `ToggleGroup` · `Badge` · `Kbd` (`KbdGroup`) · `Spinner`
 
 ### Layout
-`Card` `CardHeader` `CardTitle` `CardDescription` `CardContent` `CardFooter` `CardAction` · `Separator` · `ScrollArea`
+`Card` `CardHeader` `CardTitle` `CardDescription` `CardContent` `CardFooter` `CardAction` · `Separator` · `ScrollArea` · `AspectRatio` · `Item` (`ItemMedia`, `ItemContent`, `ItemActions`, `ItemGroup`, `ItemSeparator`, `ItemTitle`, `ItemDescription`, `ItemHeader`, `ItemFooter`) · `Empty` (`EmptyHeader`, `EmptyTitle`, `EmptyDescription`, `EmptyContent`, `EmptyMedia`) · `ResizablePanelGroup` (`ResizablePanel`, `ResizableHandle`)
 
 ### Navigation
-`Tabs` · `Breadcrumb` · `Pagination` · `Accordion`
+`Tabs` · `Breadcrumb` · `Pagination` · `Accordion` · `NavigationMenu` · `Collapsible` · `Sidebar` (full primitive set: `SidebarProvider`, `SidebarTrigger`, `SidebarContent`, `SidebarHeader`, `SidebarFooter`, `SidebarGroup`, `SidebarMenu`, `SidebarMenuButton`, `SidebarInset`, …)
 
 ### Overlays
-`Dialog` · `Sheet` · `DropdownMenu` · `Popover` · `HoverCard` · `Tooltip` · `Command`
+`Dialog` · `AlertDialog` · `Sheet` · `Drawer` (vaul) · `DropdownMenu` · `ContextMenu` · `Menubar` · `Popover` · `HoverCard` · `Tooltip` · `Command`
 
 ### Feedback
 `Alert` · `Skeleton` · `Progress` · `Toaster` (Sonner)
 
 ### Data
-`Table` · `Avatar` · `ChartContainer` · `ChartTooltip` · `ChartLegend` (from `@lantern-fire/ui/chart`)
+`Table` · `Avatar` · `Carousel` (Embla) · `ChartContainer` · `ChartTooltip` · `ChartLegend` (from `@lantern-fire/ui/chart`)
 
 ### Typography
 `.prose` — apply to a container with rendered markdown for consistent typographic styles.

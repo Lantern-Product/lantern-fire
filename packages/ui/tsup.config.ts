@@ -50,4 +50,18 @@ export default defineConfig([
       prependUseClient("chart.cjs");
     },
   },
+  {
+    // Server-safe utilities (cn, etc.). NO "use client" — these are pure
+    // functions that must be callable from React Server Components.
+    entry: { utils: "src/utils.ts" },
+    format: ["esm", "cjs"],
+    dts: true,
+    sourcemap: true,
+    treeshake: true,
+    splitting: false,
+    external: ["react", "react-dom", "react/jsx-runtime"],
+    esbuildOptions(options) {
+      options.legalComments = "inline";
+    },
+  },
 ]);

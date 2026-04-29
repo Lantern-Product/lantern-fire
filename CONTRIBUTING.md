@@ -46,7 +46,11 @@ export * from "./components/your-component";
 
 If the component wraps a large third-party library (like recharts), consider a subpath export instead (see `packages/ui/src/chart.ts` as a reference).
 
-### 4. Build and check
+### 4. Document the component
+
+If the component belongs to an existing category (buttons, forms, overlays, feedback, navigation, data, cards), add a new `<Demo>` block to the appropriate page in `apps/web/src/app/components/<category>/page.tsx`. For a new category, create a new route under `apps/web/src/app/components/` and add it to the sidebar in `apps/web/src/components/sidebar-nav.tsx`.
+
+### 5. Build and check
 
 ```sh
 npm run build          # from repo root
