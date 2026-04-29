@@ -81,7 +81,9 @@ const stack = [
 export default function LandingPage() {
   return (
     <>
-      <Hero3 />
+      <div className="mx-auto max-w-6xl px-6 pt-6">
+        <Hero3 />
+      </div>
 
       <section className="border-t border-border bg-background">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
