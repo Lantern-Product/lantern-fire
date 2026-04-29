@@ -10,7 +10,7 @@ Shared design system for Lantern products — shadcn/ui primitives, design token
 - shadcn/ui style `radix-nova`
 - React 18.3+ / React 19 / TypeScript 5
 - Tokens in OKLCH
-- Fonts: Poppins (sans/heading), IBM Plex Mono (mono)
+- Fonts: DM Sans (body copy), Poppins (headings), IBM Plex Mono (mono)
 - Icons: lucide-react
 
 ## Structure
@@ -112,13 +112,14 @@ The entire `@lantern-product/ui` bundle is marked `"use client"`. This means:
 **Option A — next/font (recommended for Next.js):**
 
 ```ts
-import { Poppins, IBM_Plex_Mono } from "next/font/google";
+import { DM_Sans, Poppins, IBM_Plex_Mono } from "next/font/google";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["300","400","500","600","700"], variable: "--font-sans" });
+const dmSans = DM_Sans({ subsets: ["latin"], weight: ["300","400","500","600"], axes: ["opsz"], variable: "--font-sans" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["300","400","500","600","700"], variable: "--font-heading" });
 const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400","500"], variable: "--font-mono" });
 ```
 
-Then add `className={`${poppins.variable} ${mono.variable}`}` to your `<html>` element.
+Then add `className={`${dmSans.variable} ${poppins.variable} ${mono.variable}`}` to your `<html>` element.
 
 **Option B — optional Google Fonts CSS (non-Next.js):**
 
@@ -126,7 +127,7 @@ Then add `className={`${poppins.variable} ${mono.variable}`}` to your `<html>` e
 import "@lantern-product/ui/fonts";
 ```
 
-This imports the Google Fonts `@import url(...)` directly. It is a blocking network request and disables font optimisation — use only when `next/font` is unavailable.
+This imports DM Sans, Poppins, and IBM Plex Mono via a Google Fonts `@import url(...)` directly. It is a blocking network request and disables font optimisation — use only when `next/font` is unavailable.
 
 ## Design tokens
 

@@ -90,7 +90,7 @@
 }
 
 @theme inline {
-  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
 

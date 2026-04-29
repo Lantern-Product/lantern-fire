@@ -1,12 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, IBM_Plex_Mono } from "next/font/google";
+import { DM_Sans, Poppins, IBM_Plex_Mono } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-sans",
+  variable: "--font-heading",
   display: "swap",
 });
 
@@ -73,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${poppins.variable} ${mono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${dmSans.variable} ${poppins.variable} ${mono.variable}`}>
       <body className="font-sans antialiased">
         <Providers>{children}</Providers>
       </body>
