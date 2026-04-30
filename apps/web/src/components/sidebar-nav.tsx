@@ -16,6 +16,7 @@ const sections: NavSection[] = [
       { label: "Introduction", href: "/" },
       { label: "Design tokens", href: "/tokens" },
       { label: "Typography", href: "/typography" },
+      { label: "Release notes", href: "/releases" },
     ],
   },
   {
