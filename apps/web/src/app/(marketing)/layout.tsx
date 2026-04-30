@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@lantern-product/ui";
 import { LanternMark } from "@/components/lantern-mark";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { version as uiVersion } from "@lantern-product/ui/package.json";
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -13,7 +14,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
             <span className="font-heading text-base font-semibold tracking-tight">
               Lantern Fire
             </span>
-            <span className="text-xs text-muted-foreground">v0.1.0</span>
+            <span className="text-xs text-muted-foreground">v{uiVersion}</span>
           </Link>
           <div className="flex items-center gap-1">
             <Link

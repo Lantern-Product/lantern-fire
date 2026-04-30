@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LanternMark } from "@/components/lantern-mark";
 import { SidebarNav } from "@/components/sidebar-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { version as uiVersion } from "@lantern-product/ui/package.json";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -18,7 +19,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
               <p className="font-heading text-base font-semibold leading-tight">
                 Lantern Fire
               </p>
-              <p className="text-xs text-muted-foreground">Design system v0.1.0</p>
+              <p className="text-xs text-muted-foreground">Design system v{uiVersion}</p>
             </div>
           </Link>
           <ThemeToggle />

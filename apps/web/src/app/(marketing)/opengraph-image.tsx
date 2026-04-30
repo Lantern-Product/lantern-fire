@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { version as uiVersion } from "@lantern-product/ui/package.json";
 
 export const runtime = "edge";
 export const alt = "Lantern Fire — A design system for Lantern products";
@@ -96,7 +97,7 @@ export default async function OGImage() {
               letterSpacing: 1,
             }}
           >
-            v0.1.0
+            v{uiVersion}
           </span>
         </div>
 

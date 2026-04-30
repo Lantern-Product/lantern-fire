@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { version as uiVersion } from "@lantern-product/ui/package.json";
 import {
   Badge,
   Button,
@@ -270,7 +271,7 @@ export function Example() {
 
       <footer className="border-t border-border bg-background">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 text-xs text-muted-foreground sm:flex-row">
-          <p>Lantern Fire v0.1.0 — A design system for Lantern products.</p>
+          <p>Lantern Fire v{uiVersion} — A design system for Lantern products.</p>
           <p>Built with @lantern-product/ui, Next.js 16, and Tailwind v4.</p>
         </div>
       </footer>

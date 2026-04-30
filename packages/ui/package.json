@@ -57,7 +57,8 @@
     },
     "./styles": "./styles/globals.css",
     "./fonts": "./styles/fonts.css",
-    "./components.json": "./components.json"
+    "./components.json": "./components.json",
+    "./package.json": "./package.json"
   },
   "typesVersions": {
     "*": {
