@@ -35,10 +35,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
-
-      - name: Create Release PR or Publish to npmjs.com
+      - name: Create Release PR or Publish
         id: changesets
         uses: changesets/action@v1
         with:
@@ -46,14 +43,19 @@ jobs:
           title: "chore: version packages"
           commit: "chore: version packages"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Setup Node.js for GitHub Packages
+        if: steps.changesets.outputs.published == 'true'
+        uses: actions/setup-node@v4
+        with:
+          registry-url: https://npm.pkg.github.com
+          scope: "@lantern-product"
+
       - name: Publish to GitHub Packages
         if: steps.changesets.outputs.published == 'true'
-        run: |
-          npm config set @lantern-product:registry https://npm.pkg.github.com
-          npm publish --workspace @lantern-product/ui --registry https://npm.pkg.github.com
+        run: npm publish --workspace @lantern-product/ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
