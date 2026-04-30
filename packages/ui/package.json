@@ -1,6 +1,6 @@
 {
   "name": "@lantern-product/ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lantern Fire Design System — shadcn/ui primitives, tokens, and utilities.",
   "license": "MIT",
   "private": false,
