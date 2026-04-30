@@ -1,3 +1,4 @@
+import { highlight } from "sugar-high";
 import { cn } from "@lantern-product/ui/utils";
 
 export function CodeBlock({
@@ -9,6 +10,8 @@ export function CodeBlock({
   className?: string;
   language?: string;
 }) {
+  const html = highlight(children);
+
   return (
     <pre
       className={cn(
@@ -17,7 +20,10 @@ export function CodeBlock({
       )}
       data-language={language}
     >
-      <code className="font-mono">{children}</code>
+      <code
+        className="font-mono"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </pre>
   );
 }

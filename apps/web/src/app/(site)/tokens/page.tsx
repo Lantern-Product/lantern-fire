@@ -101,8 +101,8 @@ export default function TokensPage() {
             <p className="font-heading text-3xl font-semibold tracking-tight">The quick brown fox</p>
           </div>
           <div>
-            <p className="mb-1 font-mono text-xs text-muted-foreground">font-sans · DM Sans</p>
-            <p className="font-sans text-base">The quick brown fox jumps over the lazy dog</p>
+            <p className="mb-1 font-mono text-xs text-muted-foreground">font-sans · DM Sans <span className="opacity-50">(base page font)</span></p>
+            <p className="font-sans text-2xl">The quick brown fox jumps over the lazy dog</p>
             <p className="mt-1 font-mono text-[10px] text-muted-foreground">"DM Sans", ui-sans-serif, system-ui, sans-serif</p>
           </div>
           <div>

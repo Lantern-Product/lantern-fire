@@ -15,7 +15,23 @@ export default function FeedbackPage() {
         description="Communicate state, progress, and outcomes to the user."
       />
 
-      <Demo title="Alerts">
+      <Demo
+        title="Alerts"
+        code={`<Alert>
+  <InfoIcon />
+  <AlertTitle>Heads up</AlertTitle>
+  <AlertDescription>
+    You can update your preferences in settings.
+  </AlertDescription>
+</Alert>
+<Alert variant="destructive">
+  <TriangleAlertIcon />
+  <AlertTitle>Something went wrong</AlertTitle>
+  <AlertDescription>
+    We couldn't save your changes. Please try again.
+  </AlertDescription>
+</Alert>`}
+      >
         <div className="flex w-full flex-col gap-3">
           <Alert>
             <InfoIcon />
@@ -34,7 +50,13 @@ export default function FeedbackPage() {
         </div>
       </Demo>
 
-      <Demo title="Skeleton loaders">
+      <Demo
+        title="Skeleton loaders"
+        code={`<Skeleton className="h-8 w-48" />
+<Skeleton className="h-4 w-full" />
+<Skeleton className="h-4 w-4/5" />
+<Skeleton className="h-32 w-full rounded-xl" />`}
+      >
         <div className="flex w-full max-w-sm flex-col gap-3">
           <Skeleton className="h-8 w-48" />
           <Skeleton className="h-4 w-full" />
@@ -43,7 +65,12 @@ export default function FeedbackPage() {
         </div>
       </Demo>
 
-      <Demo title="Progress">
+      <Demo
+        title="Progress"
+        code={`<Progress value={25} />
+<Progress value={60} />
+<Progress value={100} />`}
+      >
         <div className="flex w-full max-w-sm flex-col gap-4">
           <Progress value={25} />
           <Progress value={60} />
@@ -51,7 +78,27 @@ export default function FeedbackPage() {
         </div>
       </Demo>
 
-      <Demo title="Toast notifications">
+      <Demo
+        title="Toast notifications"
+        code={`<Button onClick={() => toast("Event scheduled", {
+  description: "Tuesday at 3:00 PM",
+})}>
+  Show toast
+</Button>
+<Button
+  variant="outline"
+  onClick={() => toast.success("Profile updated")}
+>
+  <CircleCheckIcon /> Success
+</Button>
+<Button
+  variant="destructive"
+  onClick={() => toast.error("Upload failed")}
+>
+  Error
+</Button>
+<Toaster />`}
+      >
         <div className="flex flex-wrap gap-2">
           <Button onClick={() => toast("Event scheduled", { description: "Tuesday at 3:00 PM" })}>
             Show toast

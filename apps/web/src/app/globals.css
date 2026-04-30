@@ -3,3 +3,30 @@
 /* Scan workspace package source so Tailwind v4 generates utility classes
    used inside @lantern-product/ui components. Path is relative to this file. */
 @source "../../../../packages/ui/src";
+
+/* sugar-high syntax highlighting tokens.
+   sugar-high emits <span class="sh__token sh__token--<type>"> via inline CSS vars,
+   so we expose the variables it reads (--sh-*) and theme them per mode. */
+:root {
+  --sh-class: oklch(0.55 0.16 30);
+  --sh-identifier: oklch(0.30 0.05 65);
+  --sh-sign: oklch(0.55 0.03 65);
+  --sh-property: oklch(0.55 0.16 30);
+  --sh-entity: oklch(0.50 0.14 250);
+  --sh-jsxliterals: oklch(0.45 0.15 280);
+  --sh-string: oklch(0.50 0.14 145);
+  --sh-keyword: oklch(0.50 0.20 320);
+  --sh-comment: oklch(0.60 0.02 65);
+}
+
+.dark {
+  --sh-class: oklch(0.78 0.16 30);
+  --sh-identifier: oklch(0.92 0.02 90);
+  --sh-sign: oklch(0.65 0.02 65);
+  --sh-property: oklch(0.78 0.16 30);
+  --sh-entity: oklch(0.75 0.14 250);
+  --sh-jsxliterals: oklch(0.78 0.13 280);
+  --sh-string: oklch(0.78 0.14 145);
+  --sh-keyword: oklch(0.78 0.18 320);
+  --sh-comment: oklch(0.55 0.02 65);
+}

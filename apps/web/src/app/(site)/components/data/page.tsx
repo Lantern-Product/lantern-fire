@@ -34,7 +34,32 @@ export default function DataPage() {
         description="Surfaces for tabular data and identity. Charts ship from a separate subpath: @lantern-product/ui/chart."
       />
 
-      <Demo title="Table">
+      <Demo
+        title="Table"
+        code={`<Table>
+  <TableCaption>Team members</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Name</TableHead>
+      <TableHead>Email</TableHead>
+      <TableHead>Role</TableHead>
+      <TableHead>Status</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    {users.map((u) => (
+      <TableRow key={u.email}>
+        <TableCell>{u.name}</TableCell>
+        <TableCell>{u.email}</TableCell>
+        <TableCell>{u.role}</TableCell>
+        <TableCell>
+          <Badge variant="secondary">{u.status}</Badge>
+        </TableCell>
+      </TableRow>
+    ))}
+  </TableBody>
+</Table>`}
+      >
         <Table>
           <TableCaption>Team members</TableCaption>
           <TableHeader>
@@ -64,7 +89,16 @@ export default function DataPage() {
         </Table>
       </Demo>
 
-      <Demo title="Avatars">
+      <Demo
+        title="Avatars"
+        code={`<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
+  <AvatarFallback>SC</AvatarFallback>
+</Avatar>
+<Avatar>
+  <AvatarFallback>AL</AvatarFallback>
+</Avatar>`}
+      >
         <div className="flex items-center gap-3">
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
@@ -85,6 +119,15 @@ export default function DataPage() {
       <Demo
         title="Carousel"
         description="Scrollable horizontal list of items powered by Embla. Use the buttons or swipe to navigate."
+        code={`<Carousel>
+  <CarouselContent>
+    {items.map((item, i) => (
+      <CarouselItem key={i}>{item}</CarouselItem>
+    ))}
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>`}
       >
         <div className="w-full max-w-md px-12">
           <Carousel className="w-full">

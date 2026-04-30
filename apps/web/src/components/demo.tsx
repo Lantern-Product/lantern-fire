@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@lantern-product/ui";
 import { cn } from "@lantern-product/ui/utils";
 import { CodeIcon, EyeIcon } from "lucide-react";
+import { CodeBlock } from "@/components/code-block";
 
 type DemoProps = {
   title: string;
@@ -45,9 +46,7 @@ export function Demo({ title, description, code, className, children }: DemoProp
         ) : null}
       </div>
       {showCode && code ? (
-        <pre className="overflow-x-auto rounded-xl border border-border bg-muted/40 p-4 text-xs leading-relaxed">
-          <code className="font-mono">{code}</code>
-        </pre>
+        <CodeBlock language="tsx">{code}</CodeBlock>
       ) : (
         <div
           className={cn(

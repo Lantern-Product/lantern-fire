@@ -57,7 +57,19 @@ export default function NavigationPage() {
         description="Move between sections and reveal hierarchical content."
       />
 
-      <Demo title="Tabs · default">
+      <Demo
+        title="Tabs · default"
+        code={`<Tabs defaultValue="overview">
+  <TabsList>
+    <TabsTrigger value="overview">Overview</TabsTrigger>
+    <TabsTrigger value="analytics">Analytics</TabsTrigger>
+    <TabsTrigger value="settings">Settings</TabsTrigger>
+  </TabsList>
+  <TabsContent value="overview">Overview content goes here.</TabsContent>
+  <TabsContent value="analytics">Analytics content goes here.</TabsContent>
+  <TabsContent value="settings">Settings content goes here.</TabsContent>
+</Tabs>`}
+      >
         <Tabs defaultValue="overview" className="w-full">
           <TabsList>
             <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -76,7 +88,19 @@ export default function NavigationPage() {
         </Tabs>
       </Demo>
 
-      <Demo title="Tabs · line variant">
+      <Demo
+        title="Tabs · line variant"
+        code={`<Tabs defaultValue="t1">
+  <TabsList variant="line">
+    <TabsTrigger value="t1">First</TabsTrigger>
+    <TabsTrigger value="t2">Second</TabsTrigger>
+    <TabsTrigger value="t3">Third</TabsTrigger>
+  </TabsList>
+  <TabsContent value="t1">Content one.</TabsContent>
+  <TabsContent value="t2">Content two.</TabsContent>
+  <TabsContent value="t3">Content three.</TabsContent>
+</Tabs>`}
+      >
         <Tabs defaultValue="t1" className="w-full">
           <TabsList variant="line">
             <TabsTrigger value="t1">First</TabsTrigger>
@@ -95,7 +119,24 @@ export default function NavigationPage() {
         </Tabs>
       </Demo>
 
-      <Demo title="Breadcrumb">
+      <Demo
+        title="Breadcrumb"
+        code={`<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Navigation</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>`}
+      >
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -113,7 +154,31 @@ export default function NavigationPage() {
         </Breadcrumb>
       </Demo>
 
-      <Demo title="Pagination">
+      <Demo
+        title="Pagination"
+        code={`<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious href="#" />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#">1</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#" isActive>2</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#">3</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href="#" />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>`}
+      >
         <Pagination>
           <PaginationContent>
             <PaginationItem>
@@ -140,7 +205,23 @@ export default function NavigationPage() {
         </Pagination>
       </Demo>
 
-      <Demo title="Accordion">
+      <Demo
+        title="Accordion"
+        code={`<Accordion type="single" collapsible>
+  <AccordionItem value="q1">
+    <AccordionTrigger>What is Lantern Fire?</AccordionTrigger>
+    <AccordionContent>
+      Lantern Fire is the shared design system for Lantern products.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="q2">
+    <AccordionTrigger>How do I consume it?</AccordionTrigger>
+    <AccordionContent>
+      Install the package, import the styles, then import components.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`}
+      >
         <Accordion type="single" collapsible className="w-full max-w-md">
           <AccordionItem value="q1">
             <AccordionTrigger>What is Lantern Fire?</AccordionTrigger>
@@ -168,6 +249,27 @@ export default function NavigationPage() {
       <Demo
         title="Navigation menu"
         description="Top-level navigation with rich dropdown panels."
+        code={`<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <ul className="grid w-[300px] gap-2 p-3">
+          <li>
+            <NavigationMenuLink asChild>
+              <a href="#">Lantern Cloud</a>
+            </NavigationMenuLink>
+          </li>
+        </ul>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+    <NavigationMenuItem>
+      <NavigationMenuLink asChild className="px-3">
+        <a href="#">Pricing</a>
+      </NavigationMenuLink>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>`}
       >
         <NavigationMenu>
           <NavigationMenuList>
@@ -255,6 +357,35 @@ export default function NavigationPage() {
       <Demo
         title="Sidebar"
         description="Application chrome with collapsible sidebar. Wrap your layout in SidebarProvider."
+        code={`<SidebarProvider>
+  <Sidebar collapsible="icon">
+    <SidebarHeader>Lantern</SidebarHeader>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Workspace</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton isActive>
+                <HomeIcon /> Home
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <InboxIcon /> Inbox
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+  <SidebarInset>
+    <header>
+      <SidebarTrigger />
+    </header>
+  </SidebarInset>
+</SidebarProvider>`}
       >
         <div className="w-full overflow-hidden rounded-lg border border-border">
           <SidebarProvider className="min-h-[280px]">

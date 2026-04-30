@@ -74,7 +74,26 @@ export default function OverlaysPage() {
         description="Modals, popovers, and contextual UI built on Radix primitives. All handle focus management and keyboard navigation."
       />
 
-      <Demo title="Dialog">
+      <Demo
+        title="Dialog"
+        code={`<Dialog>
+  <DialogTrigger asChild>
+    <Button>Open dialog</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Confirm deletion</DialogTitle>
+      <DialogDescription>This action cannot be undone.</DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose asChild>
+        <Button variant="ghost">Cancel</Button>
+      </DialogClose>
+      <Button variant="destructive-solid">Delete project</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>`}
+      >
         <Dialog>
           <DialogTrigger asChild>
             <Button>Open dialog</Button>
@@ -97,7 +116,20 @@ export default function OverlaysPage() {
         </Dialog>
       </Demo>
 
-      <Demo title="Sheet">
+      <Demo
+        title="Sheet"
+        code={`<Sheet>
+  <SheetTrigger asChild>
+    <Button variant="outline">Open sheet</Button>
+  </SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Edit profile</SheetTitle>
+      <SheetDescription>Make changes to your profile here.</SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>`}
+      >
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline">Open sheet</Button>
@@ -113,7 +145,25 @@ export default function OverlaysPage() {
         </Sheet>
       </Demo>
 
-      <Demo title="Dropdown menu">
+      <Demo
+        title="Dropdown menu"
+        code={`<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">
+      Account <ChevronDownIcon />
+    </Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuItem>Settings</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Sign out</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`}
+      >
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline">
@@ -132,7 +182,20 @@ export default function OverlaysPage() {
         </DropdownMenu>
       </Demo>
 
-      <Demo title="Popover">
+      <Demo
+        title="Popover"
+        code={`<Popover>
+  <PopoverTrigger asChild>
+    <Button variant="outline">Show popover</Button>
+  </PopoverTrigger>
+  <PopoverContent className="w-72">
+    <p className="text-sm font-medium">Quick settings</p>
+    <p className="text-xs text-muted-foreground">
+      Anchored content with focus trap and arrow positioning.
+    </p>
+  </PopoverContent>
+</Popover>`}
+      >
         <Popover>
           <PopoverTrigger asChild>
             <Button variant="outline">Show popover</Button>
@@ -148,7 +211,18 @@ export default function OverlaysPage() {
         </Popover>
       </Demo>
 
-      <Demo title="Hover card">
+      <Demo
+        title="Hover card"
+        code={`<HoverCard>
+  <HoverCardTrigger asChild>
+    <Button variant="link">@ada</Button>
+  </HoverCardTrigger>
+  <HoverCardContent>
+    <p className="text-sm font-medium">Ada Lovelace</p>
+    <p className="text-xs text-muted-foreground">Mathematician · 1815–1852</p>
+  </HoverCardContent>
+</HoverCard>`}
+      >
         <HoverCard>
           <HoverCardTrigger asChild>
             <Button variant="link">@ada</Button>
@@ -160,7 +234,15 @@ export default function OverlaysPage() {
         </HoverCard>
       </Demo>
 
-      <Demo title="Tooltip">
+      <Demo
+        title="Tooltip"
+        code={`<Tooltip>
+  <TooltipTrigger asChild>
+    <Button variant="ghost">Hover me</Button>
+  </TooltipTrigger>
+  <TooltipContent>Tooltip content</TooltipContent>
+</Tooltip>`}
+      >
         <Tooltip>
           <TooltipTrigger asChild>
             <Button variant="ghost">Hover me</Button>
@@ -172,6 +254,23 @@ export default function OverlaysPage() {
       <Demo
         title="Alert dialog"
         description="Modal that requires explicit confirm or cancel. Use for destructive actions."
+        code={`<AlertDialog>
+  <AlertDialogTrigger asChild>
+    <Button variant="destructive">Delete account</Button>
+  </AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This action cannot be undone.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction>Delete account</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>`}
       >
         <AlertDialog>
           <AlertDialogTrigger asChild>
@@ -196,6 +295,23 @@ export default function OverlaysPage() {
       <Demo
         title="Drawer"
         description="Bottom-anchored sliding panel built on vaul. Great for mobile-first sheets."
+        code={`<Drawer>
+  <DrawerTrigger asChild>
+    <Button variant="outline">Open drawer</Button>
+  </DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Move project</DrawerTitle>
+      <DrawerDescription>Choose a destination workspace.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
+      <Button>Confirm move</Button>
+      <DrawerClose asChild>
+        <Button variant="ghost">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>`}
       >
         <Drawer>
           <DrawerTrigger asChild>
@@ -226,6 +342,21 @@ export default function OverlaysPage() {
       <Demo
         title="Context menu"
         description="Right-click (or long-press) the area below to open the menu."
+        code={`<ContextMenu>
+  <ContextMenuTrigger>Right-click here</ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuLabel>Actions</ContextMenuLabel>
+    <ContextMenuSeparator />
+    <ContextMenuItem>
+      Open <ContextMenuShortcut>\u2318O</ContextMenuShortcut>
+    </ContextMenuItem>
+    <ContextMenuItem>
+      Rename <ContextMenuShortcut>F2</ContextMenuShortcut>
+    </ContextMenuItem>
+    <ContextMenuSeparator />
+    <ContextMenuItem variant="destructive">Delete</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>`}
       >
         <ContextMenu>
           <ContextMenuTrigger className="flex h-32 w-full max-w-sm items-center justify-center rounded-md border border-dashed border-border text-sm text-muted-foreground">
@@ -254,6 +385,30 @@ export default function OverlaysPage() {
       <Demo
         title="Menubar"
         description="Application-style menu bar with multiple top-level menus."
+        code={`<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        New <MenubarShortcut>\u2318N</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem>
+        Open <MenubarShortcut>\u2318O</MenubarShortcut>
+      </MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>
+        Save <MenubarShortcut>\u2318S</MenubarShortcut>
+      </MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+  <MenubarMenu>
+    <MenubarTrigger>Edit</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>Undo</MenubarItem>
+      <MenubarItem>Redo</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>`}
       >
         <Menubar>
           <MenubarMenu>
