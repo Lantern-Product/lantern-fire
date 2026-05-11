@@ -6,7 +6,6 @@ import {
   layoutItems,
   type LayoutCategory,
 } from "@/app/(site)/layout/_registry";
-import { DebugCardImageProbe } from "@/components/debug-card-image-probe";
 
 const categories: LayoutCategory[] = [
   "container",
@@ -37,7 +36,6 @@ export default async function LayoutPreviewPage({
   return (
     <div className="relative min-h-screen w-full">
       <Component />
-      <DebugCardImageProbe />
       <div className="fixed bottom-4 right-4 z-50">
         <Link
           href={`/layout/${item.category}`}
