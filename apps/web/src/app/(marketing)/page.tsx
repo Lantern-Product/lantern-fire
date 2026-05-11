@@ -18,7 +18,7 @@ import {
   PackageIcon,
   SparklesIcon,
 } from "lucide-react";
-import { Hero3 } from "@/components/blocks/hero-3";
+import { Hero13 } from "@/components/blocks/hero-13";
 import { CodeBlock } from "@/components/code-block";
 
 export const metadata: Metadata = {
@@ -82,7 +82,7 @@ const stack = [
 export default function LandingPage() {
   return (
     <>
-      <Hero3 />
+      <Hero13 />
 
       <section className="border-t border-border bg-background">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
