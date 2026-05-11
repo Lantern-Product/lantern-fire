@@ -8,7 +8,7 @@ export function PageWithActions() {
           Back End Developer
         </h1>
         <div className="flex gap-2">
-          <Button variant="outline">Edit</Button>
+          <Button variant="secondary">Edit</Button>
           <Button>Publish</Button>
         </div>
       </div>

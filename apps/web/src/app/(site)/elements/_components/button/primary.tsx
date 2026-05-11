@@ -4,10 +4,16 @@ import { ShowcaseFrame } from "../shared";
 export function ButtonPrimary() {
   return (
     <ShowcaseFrame>
-      <Button size="xs">Save</Button>
-      <Button size="sm">Save</Button>
-      <Button>Save</Button>
-      <Button size="lg">Save</Button>
+      <Button variant="primary" size="xs">
+        Save
+      </Button>
+      <Button variant="primary" size="sm">
+        Save
+      </Button>
+      <Button variant="primary">Save</Button>
+      <Button variant="primary" size="lg">
+        Save
+      </Button>
     </ShowcaseFrame>
   );
 }

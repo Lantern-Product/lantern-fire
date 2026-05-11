@@ -31,7 +31,7 @@ describe("Button", () => {
   });
 
   it("renders all variants without throwing", () => {
-    const variants = ["default", "outline", "secondary", "ghost", "destructive", "destructive-solid", "link"] as const;
+    const variants = ["primary", "secondary", "secondary-green", "secondary-coral", "ghost", "destructive", "destructive-solid", "link"] as const;
     for (const variant of variants) {
       const { unmount } = render(<Button variant={variant}>{variant}</Button>);
       expect(screen.getByRole("button", { name: variant })).toBeInTheDocument();

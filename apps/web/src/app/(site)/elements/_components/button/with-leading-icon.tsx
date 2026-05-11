@@ -8,7 +8,7 @@ export function ButtonWithLeadingIcon() {
       <Button>
         <PlusIcon /> New project
       </Button>
-      <Button variant="outline">
+      <Button variant="secondary">
         <UploadIcon /> Upload
       </Button>
       <Button variant="secondary">

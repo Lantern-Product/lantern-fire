@@ -6,6 +6,7 @@ import * as THREE from "three";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 import { Button } from "@lantern-product/ui";
+import { darken, lighten, mixRgb, resolveCssVar } from "@/lib/css-color";
 
 type HeroLink = {
   label: string;
@@ -91,19 +92,19 @@ export function Hero3({
       }
     `;
 
-    // Soft coral palette: pink-peach mean tuned by eye (steady-state ~rgb(232,
-    // 149, 122)) rather than sampled from --primary, so the shader stays
-    // GPU-resident. Base lifts shadowed regions toward warm pink-brown while
-    // the green/blue modulators add the lift that distinguishes coral from
-    // straight amber.
+    // Token-driven palette: uBaseColor is the shadowed midtone derived from
+    // --primary, uHighlightColor is the lifted highlight (primary lifted toward
+    // white with a touch of warmth blended in from --chart-2 / coral), and
+    // uMouseTint is the coral spotlight that follows the cursor. The shader
+    // mixes base -> highlight along a noisy wave field rather than adding R/G/B
+    // factors, so any future brand-hue change just retunes the uniforms.
     const fragmentShader = `
       varying vec2 vUv;
       uniform vec2 uViewportRes;
       uniform float uTime;
-      uniform float uRedFactor;
-      uniform float uGreenFactor;
-      uniform float uBlueFactor;
       uniform vec3 uBaseColor;
+      uniform vec3 uHighlightColor;
+      uniform vec3 uMouseTint;
       uniform vec2 uMouse;
 
       vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
@@ -205,11 +206,19 @@ export function Hero3({
         float waves = sin(combinedNoise * 8.0 + uTime * 0.5 + mouseEffect * 5.0) * 0.5 + 0.5;
         float radialGradient = length(squareUvs - 0.5) * 2.0;
 
-        vec3 finalColor = vec3(
-          uBaseColor.r + waves * uRedFactor   * (1.0 - radialGradient * 0.3) + mouseEffect * 0.25,
-          uBaseColor.g + waves * uGreenFactor + sin(squareUvs.x * 3.14)      * 0.18 + mouseEffect * 0.15,
-          uBaseColor.b + waves * uBlueFactor  + cos(squareUvs.y * 3.14)      * 0.12 + mouseEffect * 0.05
-        );
+        // Wave field falls off toward the edges; the mouse adds a soft lift
+        // to whatever's beneath it.
+        float blend = clamp(waves * (1.0 - radialGradient * 0.3) + mouseEffect * 0.6, 0.0, 1.0);
+        vec3 finalColor = mix(uBaseColor, uHighlightColor, blend);
+
+        // Subtle directional warmth from the noise field so the gradient doesn't
+        // read as flat. Reuses the highlight as the warm bias since it already
+        // carries the coral lift mixed in on the JS side.
+        float warmBias = sin(squareUvs.x * 3.14) * 0.06 + cos(squareUvs.y * 3.14) * 0.04;
+        finalColor = mix(finalColor, uHighlightColor, max(warmBias, 0.0));
+
+        // Coral spotlight under the cursor.
+        finalColor += uMouseTint * mouseEffect * 0.45;
 
         gl_FragColor = vec4(finalColor, 1.0);
       }
@@ -217,6 +226,13 @@ export function Hero3({
 
     const mouseUniform = new THREE.Vector2(0.5, 0.5);
     uniformMouseRef.current = mouseUniform;
+
+    // Fallback palette — used during SSR / before the first browser frame, and
+    // matches the resolved tokens closely enough that there's no visual jump
+    // when the real values come in.
+    const fallbackBase: [number, number, number] = [0.15, 0.34, 0.225];
+    const fallbackHighlight: [number, number, number] = [0.72, 0.81, 0.755];
+    const fallbackMouseTint: [number, number, number] = [0.9, 0.45, 0.35];
 
     const material = new THREE.ShaderMaterial({
       vertexShader,
@@ -226,12 +242,41 @@ export function Hero3({
         uViewportRes: {
           value: new THREE.Vector2(parent.clientWidth, parent.clientHeight),
         },
-        uBaseColor: { value: new THREE.Vector3(0.46, 0.24, 0.2) },
-        uRedFactor: { value: 0.78 },
-        uGreenFactor: { value: 0.46 },
-        uBlueFactor: { value: 0.3 },
+        uBaseColor: { value: new THREE.Vector3(...fallbackBase) },
+        uHighlightColor: { value: new THREE.Vector3(...fallbackHighlight) },
+        uMouseTint: { value: new THREE.Vector3(...fallbackMouseTint) },
         uMouse: { value: mouseUniform },
       },
+    });
+
+    const applyTokenColors = () => {
+      const primary = resolveCssVar("--primary") ?? fallbackBase;
+      const warm = resolveCssVar("--chart-2") ?? fallbackMouseTint;
+
+      // Shadowed midtone — kept relatively close to primary itself so the
+      // green hue still reads through the bg-foreground/30 overlay sitting on
+      // top of the canvas. Too much darkening collapses everything into the
+      // overlay's brown.
+      const base = darken(primary, 0.25);
+      // Highlight lifts primary toward white with a small coral bias so the
+      // gradient picks up warmth at its peaks without losing its green
+      // identity.
+      const lifted = lighten(primary, 0.65);
+      const highlight = mixRgb(lifted, warm, 0.08);
+
+      material.uniforms.uBaseColor.value.set(base[0], base[1], base[2]);
+      material.uniforms.uHighlightColor.value.set(highlight[0], highlight[1], highlight[2]);
+      material.uniforms.uMouseTint.value.set(warm[0], warm[1], warm[2]);
+    };
+
+    applyTokenColors();
+
+    // Re-resolve tokens when the theme toggles. next-themes flips a class on
+    // <html>, so a class-attribute MutationObserver is enough to track it.
+    const themeObserver = new MutationObserver(applyTokenColors);
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class", "data-theme"],
     });
 
     const geometry = new THREE.PlaneGeometry(1, 1);
@@ -275,6 +320,7 @@ export function Hero3({
     return () => {
       cancelAnimationFrame(animationId);
       resizeObserver.disconnect();
+      themeObserver.disconnect();
       window.removeEventListener("resize", handleResize);
       geometry.dispose();
       material.dispose();
@@ -301,7 +347,7 @@ export function Hero3({
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex h-[88vh] flex-col overflow-hidden bg-foreground/30 p-[4vmax]">
+      <div className="relative z-10 flex h-[88vh] flex-col overflow-hidden bg-foreground/20 p-[4vmax]">
         <div className="relative w-full flex-1 overflow-hidden">
           <div className="flex justify-between p-[4vmax] text-[max(1rem,1.15vmax)] text-background/95">
             <div className="font-mono uppercase tracking-[0.18em] text-xs leading-tight sm:text-[max(0.78rem,0.95vmax)]">
@@ -309,7 +355,7 @@ export function Hero3({
               <br />
               <span className="opacity-70">Design system</span>
             </div>
-            <Button asChild size="sm" variant="secondary" className="h-9 rounded-full px-4">
+            <Button asChild size="lg" variant="secondary-green" className="rounded-full">
               <Link href={ctaHref}>{ctaLabel}</Link>
             </Button>
           </div>

@@ -10,7 +10,7 @@ export function PageWithTabs() {
             Back End Developer
           </h1>
           <div className="flex shrink-0 gap-2">
-            <Button variant="outline">Edit</Button>
+            <Button variant="secondary">Edit</Button>
             <Button>Publish</Button>
           </div>
         </div>

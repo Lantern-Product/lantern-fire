@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { cn } from "@lantern-product/ui/utils";
 
 export function ContentBars({
   rows = 3,
@@ -29,12 +30,12 @@ export function FauxImage({
 }) {
   return (
     <div
-      className={
-        "w-full overflow-hidden bg-gradient-to-br from-primary/30 via-primary/15 to-primary/40 " +
-        ratio +
-        " " +
-        className
-      }
+      data-slot="card-image"
+      className={cn(
+        "w-full overflow-hidden bg-gradient-to-br from-primary/30 via-primary/15 to-primary/40",
+        ratio,
+        className,
+      )}
       aria-hidden
     />
   );

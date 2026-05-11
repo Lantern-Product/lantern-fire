@@ -12,7 +12,7 @@ export function ButtonWithTrailingIcon() {
       <Button>
         Continue <ArrowRightIcon />
       </Button>
-      <Button variant="outline">
+      <Button variant="secondary">
         Options <ChevronDownIcon />
       </Button>
       <Button variant="secondary">

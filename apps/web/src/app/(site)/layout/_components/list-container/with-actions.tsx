@@ -21,7 +21,7 @@ export function ListContainerWithActions() {
                   {item.role}
                 </p>
               </div>
-              <Button size="sm" variant="outline">
+              <Button size="sm" variant="secondary">
                 Message
               </Button>
             </li>

@@ -5,21 +5,21 @@ export function ButtonGroupSegmented() {
   return (
     <ShowcaseFrame>
       <ButtonGroup>
-        <Button variant="outline" className="bg-muted text-foreground">
+        <Button variant="secondary" className="bg-muted text-foreground">
           Day
         </Button>
-        <Button variant="outline">Week</Button>
-        <Button variant="outline">Month</Button>
-        <Button variant="outline">Year</Button>
+        <Button variant="secondary">Week</Button>
+        <Button variant="secondary">Month</Button>
+        <Button variant="secondary">Year</Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="outline" size="sm" className="bg-muted text-foreground">
+        <Button variant="secondary" size="sm" className="bg-muted text-foreground">
           List
         </Button>
-        <Button variant="outline" size="sm">
+        <Button variant="secondary" size="sm">
           Grid
         </Button>
-        <Button variant="outline" size="sm">
+        <Button variant="secondary" size="sm">
           Board
         </Button>
       </ButtonGroup>

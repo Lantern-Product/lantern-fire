@@ -7,7 +7,7 @@ export function DropdownSimple() {
   return (
     <ShowcaseFrame>
       <div className="flex flex-col items-start gap-1.5">
-        <Button variant="outline" aria-expanded="true">
+        <Button variant="secondary" aria-expanded="true">
           Options <ChevronDownIcon />
         </Button>
         <div className="z-10 min-w-44 rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10">

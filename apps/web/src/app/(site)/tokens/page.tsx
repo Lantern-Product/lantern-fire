@@ -24,6 +24,7 @@ const semanticTokens = [
 ];
 
 const statusTokens = ["status-green", "status-amber", "status-red", "status-purple"];
+const secondaryAccentTokens = ["secondary-coral"];
 const chartTokens = ["chart-1", "chart-2", "chart-3", "chart-4", "chart-5"];
 const sidebarTokens = [
   "sidebar",
@@ -70,6 +71,18 @@ export default function TokensPage() {
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {statusTokens.map((name) => (
+            <ColorSwatch key={name} cssVar={`--${name}`} label={name} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="mb-4 font-heading text-lg font-semibold">Secondary accents</h2>
+        <p className="mb-3 text-sm text-muted-foreground">
+          Filled accent variants paired with the <code className="font-mono text-xs bg-muted px-1.5 py-0.5 rounded-sm">secondary-*</code> button variants. The <code className="font-mono text-xs bg-muted px-1.5 py-0.5 rounded-sm">secondary-green</code> variant reuses the existing <code className="font-mono text-xs bg-muted px-1.5 py-0.5 rounded-sm">--secondary</code> token shown above.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {secondaryAccentTokens.map((name) => (
             <ColorSwatch key={name} cssVar={`--${name}`} label={name} />
           ))}
         </div>
