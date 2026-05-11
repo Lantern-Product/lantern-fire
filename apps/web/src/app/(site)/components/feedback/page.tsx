@@ -86,7 +86,7 @@ export default function FeedbackPage() {
   Show toast
 </Button>
 <Button
-  variant="outline"
+  variant="secondary"
   onClick={() => toast.success("Profile updated")}
 >
   <CircleCheckIcon /> Success
@@ -104,7 +104,7 @@ export default function FeedbackPage() {
             Show toast
           </Button>
           <Button
-            variant="outline"
+            variant="secondary"
             onClick={() => toast.success("Profile updated", { description: "Your changes have been saved." })}
           >
             <CircleCheckIcon /> Success

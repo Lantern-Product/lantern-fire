@@ -5,9 +5,9 @@ export function ButtonGroupSimple() {
   return (
     <ShowcaseFrame>
       <div className="flex gap-2">
-        <Button variant="outline">Years</Button>
-        <Button variant="outline">Months</Button>
-        <Button variant="outline">Days</Button>
+        <Button variant="secondary">Years</Button>
+        <Button variant="secondary">Months</Button>
+        <Button variant="secondary">Days</Button>
       </div>
     </ShowcaseFrame>
   );

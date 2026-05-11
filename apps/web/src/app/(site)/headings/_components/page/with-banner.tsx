@@ -20,7 +20,7 @@ export function PageWithBanner() {
             </div>
           </div>
           <div className="flex shrink-0 gap-2">
-            <Button variant="outline">Message</Button>
+            <Button variant="secondary">Message</Button>
             <Button>Follow</Button>
           </div>
         </div>

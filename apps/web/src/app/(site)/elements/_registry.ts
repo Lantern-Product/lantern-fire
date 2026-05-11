@@ -37,6 +37,8 @@ import { DropdownWithCheckboxItems } from "./_components/dropdown/with-checkbox-
 
 import { ButtonPrimary } from "./_components/button/primary";
 import { ButtonSecondary } from "./_components/button/secondary";
+import { ButtonSecondaryGreen } from "./_components/button/secondary-green";
+import { ButtonSecondaryCoral } from "./_components/button/secondary-coral";
 import { ButtonSoft } from "./_components/button/soft";
 import { ButtonWithLeadingIcon } from "./_components/button/with-leading-icon";
 import { ButtonWithTrailingIcon } from "./_components/button/with-trailing-icon";
@@ -105,8 +107,10 @@ export const elements: Element[] = [
   { slug: "with-checkbox-items", title: "With checkbox items", category: "dropdown", description: "Filter dropdown with multi-select checkboxes.", Component: DropdownWithCheckboxItems },
 
   // Buttons
-  { slug: "primary", title: "Primary", category: "button", description: "Primary buttons across xs / sm / default / lg sizes.", Component: ButtonPrimary },
-  { slug: "secondary", title: "Secondary", category: "button", description: "Secondary, outline, ghost, and link variants.", Component: ButtonSecondary },
+  { slug: "primary", title: "Primary", category: "button", description: "Primary buttons \u2014 the filled, high-emphasis action \u2014 across xs / sm / default / lg sizes.", Component: ButtonPrimary },
+  { slug: "secondary", title: "Secondary", category: "button", description: "Secondary buttons \u2014 the outlined, lower-emphasis companion to a primary action.", Component: ButtonSecondary },
+  { slug: "secondary-green", title: "Secondary green", category: "button", description: "Filled secondary buttons using the --secondary token \u2014 same hierarchy as primary, alternate color.", Component: ButtonSecondaryGreen },
+  { slug: "secondary-coral", title: "Secondary coral", category: "button", description: "Filled coral buttons using the --secondary-coral token \u2014 alternate emphasis color.", Component: ButtonSecondaryCoral },
   { slug: "soft", title: "Soft", category: "button", description: "Soft tinted buttons in semantic colors.", Component: ButtonSoft },
   { slug: "with-leading-icon", title: "With leading icon", category: "button", description: "Buttons with a leading lucide icon.", Component: ButtonWithLeadingIcon },
   { slug: "with-trailing-icon", title: "With trailing icon", category: "button", description: "Buttons with a trailing icon.", Component: ButtonWithTrailingIcon },

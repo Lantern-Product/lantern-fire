@@ -3,10 +3,10 @@ import { FauxImage, PageStage } from "../shared";
 export function MediaObjectSimple() {
   return (
     <PageStage>
-      <div className="mx-auto w-full max-w-2xl">
+      <div className="mx-auto w-full max-w-4xl">
         <div className="flex items-start gap-4">
-          <FauxImage className="size-20 shrink-0 rounded-lg" ratio="" />
-          <div className="min-w-0">
+          <FauxImage className="size-16 shrink-0 rounded-lg" ratio="" />
+          <div className="min-w-0 flex-1">
             <h3 className="font-heading text-base font-semibold">
               Building durable workflows
             </h3>

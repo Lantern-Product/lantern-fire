@@ -16,7 +16,7 @@ export function AvatarLargeWithActions() {
           </p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline">
+          <Button variant="secondary">
             <MailIcon /> Message
           </Button>
           <Button>

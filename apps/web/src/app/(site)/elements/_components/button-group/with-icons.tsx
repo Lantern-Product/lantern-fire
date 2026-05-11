@@ -13,24 +13,24 @@ export function ButtonGroupWithIcons() {
   return (
     <ShowcaseFrame>
       <ButtonGroup>
-        <Button variant="outline" size="icon" aria-label="Bold">
+        <Button variant="secondary" size="icon" aria-label="Bold">
           <BoldIcon />
         </Button>
-        <Button variant="outline" size="icon" aria-label="Italic">
+        <Button variant="secondary" size="icon" aria-label="Italic">
           <ItalicIcon />
         </Button>
-        <Button variant="outline" size="icon" aria-label="Underline">
+        <Button variant="secondary" size="icon" aria-label="Underline">
           <UnderlineIcon />
         </Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="outline" size="icon" aria-label="Align left">
+        <Button variant="secondary" size="icon" aria-label="Align left">
           <AlignLeftIcon />
         </Button>
-        <Button variant="outline" size="icon" aria-label="Align center">
+        <Button variant="secondary" size="icon" aria-label="Align center">
           <AlignCenterIcon />
         </Button>
-        <Button variant="outline" size="icon" aria-label="Align right">
+        <Button variant="secondary" size="icon" aria-label="Align right">
           <AlignRightIcon />
         </Button>
       </ButtonGroup>

@@ -18,7 +18,7 @@ export function MediaObjectWithActions() {
                 </p>
               </div>
               <div className="flex shrink-0 gap-2">
-                <Button size="sm" variant="outline">
+                <Button size="sm" variant="secondary">
                   Message
                 </Button>
                 <Button size="sm">Follow</Button>

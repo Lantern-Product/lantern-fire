@@ -19,7 +19,7 @@ export function PageWithAvatarAndActions() {
           </div>
         </div>
         <div className="flex shrink-0 gap-2">
-          <Button variant="outline">
+          <Button variant="secondary">
             <MailIcon /> Message
           </Button>
           <Button>

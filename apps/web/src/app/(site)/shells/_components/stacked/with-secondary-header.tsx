@@ -37,7 +37,7 @@ export function StackedWithSecondaryHeader() {
       <div className="border-b border-border bg-muted/40">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3 lg:px-8">
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm">
+            <Button variant="secondary" size="sm">
               <FilterIcon /> Filters
             </Button>
             <Button variant="ghost" size="sm">

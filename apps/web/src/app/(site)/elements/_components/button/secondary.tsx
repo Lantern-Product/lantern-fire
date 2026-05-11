@@ -4,10 +4,16 @@ import { ShowcaseFrame } from "../shared";
 export function ButtonSecondary() {
   return (
     <ShowcaseFrame>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="link">Link</Button>
+      <Button variant="secondary" size="xs">
+        Cancel
+      </Button>
+      <Button variant="secondary" size="sm">
+        Cancel
+      </Button>
+      <Button variant="secondary">Cancel</Button>
+      <Button variant="secondary" size="lg">
+        Cancel
+      </Button>
     </ShowcaseFrame>
   );
 }

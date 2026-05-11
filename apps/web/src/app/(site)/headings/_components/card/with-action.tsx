@@ -8,7 +8,7 @@ export function CardWithAction() {
           <h3 className="font-heading text-base font-semibold">
             Applicant Information
           </h3>
-          <Button size="sm" variant="outline">
+          <Button size="sm" variant="secondary">
             Edit
           </Button>
         </div>

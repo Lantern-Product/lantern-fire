@@ -251,7 +251,7 @@ export function Example() {
             <Button asChild size="lg">
               <Link href="/components">Browse components</Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="secondary">
               <Link href="/tokens">View tokens</Link>
             </Button>
             <Button asChild size="lg" variant="ghost">

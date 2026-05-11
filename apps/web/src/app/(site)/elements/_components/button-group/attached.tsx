@@ -5,14 +5,14 @@ export function ButtonGroupAttached() {
   return (
     <ShowcaseFrame>
       <ButtonGroup>
-        <Button variant="outline">Years</Button>
-        <Button variant="outline">Months</Button>
-        <Button variant="outline">Days</Button>
+        <Button variant="secondary">Years</Button>
+        <Button variant="secondary">Months</Button>
+        <Button variant="secondary">Days</Button>
       </ButtonGroup>
       <ButtonGroup orientation="vertical">
-        <Button variant="outline">Top</Button>
-        <Button variant="outline">Middle</Button>
-        <Button variant="outline">Bottom</Button>
+        <Button variant="secondary">Top</Button>
+        <Button variant="secondary">Middle</Button>
+        <Button variant="secondary">Bottom</Button>
       </ButtonGroup>
     </ShowcaseFrame>
   );

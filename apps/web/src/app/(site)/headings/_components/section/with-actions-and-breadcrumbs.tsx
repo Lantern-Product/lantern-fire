@@ -11,7 +11,7 @@ export function SectionWithActionsAndBreadcrumbs() {
             Job Postings
           </h2>
           <div className="flex shrink-0 gap-2">
-            <Button size="sm" variant="outline">
+            <Button size="sm" variant="secondary">
               Edit
             </Button>
             <Button size="sm">Publish</Button>

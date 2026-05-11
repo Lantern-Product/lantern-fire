@@ -20,7 +20,7 @@ export function CardWithHeaderAndFooter() {
             <ContentBars rows={4} />
           </CardContent>
           <CardFooter className="justify-end gap-2">
-            <Button variant="outline">Cancel</Button>
+            <Button variant="secondary">Cancel</Button>
             <Button>Save changes</Button>
           </CardFooter>
         </Card>

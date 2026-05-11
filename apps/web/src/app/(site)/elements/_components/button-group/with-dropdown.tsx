@@ -6,10 +6,10 @@ export function ButtonGroupWithDropdown() {
   return (
     <ShowcaseFrame>
       <ButtonGroup>
-        <Button variant="outline">
+        <Button variant="secondary">
           <SaveIcon /> Save
         </Button>
-        <Button variant="outline" size="icon" aria-label="More options">
+        <Button variant="secondary" size="icon" aria-label="More options">
           <ChevronDownIcon />
         </Button>
       </ButtonGroup>

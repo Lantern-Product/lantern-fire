@@ -15,7 +15,7 @@ export function ButtonCircular() {
         <PlusIcon />
       </Button>
       <Button
-        variant="outline"
+        variant="secondary"
         size="icon"
         className="rounded-full"
         aria-label="Search"
@@ -39,7 +39,7 @@ export function ButtonCircular() {
         <HeartIcon />
       </Button>
       <Button
-        variant="outline"
+        variant="secondary"
         size="icon-lg"
         className="rounded-full"
         aria-label="Settings"

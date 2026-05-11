@@ -120,7 +120,7 @@ export default function OverlaysPage() {
         title="Sheet"
         code={`<Sheet>
   <SheetTrigger asChild>
-    <Button variant="outline">Open sheet</Button>
+    <Button variant="secondary">Open sheet</Button>
   </SheetTrigger>
   <SheetContent>
     <SheetHeader>
@@ -132,7 +132,7 @@ export default function OverlaysPage() {
       >
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline">Open sheet</Button>
+            <Button variant="secondary">Open sheet</Button>
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
@@ -149,7 +149,7 @@ export default function OverlaysPage() {
         title="Dropdown menu"
         code={`<DropdownMenu>
   <DropdownMenuTrigger asChild>
-    <Button variant="outline">
+    <Button variant="secondary">
       Account <ChevronDownIcon />
     </Button>
   </DropdownMenuTrigger>
@@ -166,7 +166,7 @@ export default function OverlaysPage() {
       >
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline">
+            <Button variant="secondary">
               Account <ChevronDownIcon />
             </Button>
           </DropdownMenuTrigger>
@@ -186,7 +186,7 @@ export default function OverlaysPage() {
         title="Popover"
         code={`<Popover>
   <PopoverTrigger asChild>
-    <Button variant="outline">Show popover</Button>
+    <Button variant="secondary">Show popover</Button>
   </PopoverTrigger>
   <PopoverContent className="w-72">
     <p className="text-sm font-medium">Quick settings</p>
@@ -198,7 +198,7 @@ export default function OverlaysPage() {
       >
         <Popover>
           <PopoverTrigger asChild>
-            <Button variant="outline">Show popover</Button>
+            <Button variant="secondary">Show popover</Button>
           </PopoverTrigger>
           <PopoverContent className="w-72">
             <div className="flex flex-col gap-2">
@@ -297,7 +297,7 @@ export default function OverlaysPage() {
         description="Bottom-anchored sliding panel built on vaul. Great for mobile-first sheets."
         code={`<Drawer>
   <DrawerTrigger asChild>
-    <Button variant="outline">Open drawer</Button>
+    <Button variant="secondary">Open drawer</Button>
   </DrawerTrigger>
   <DrawerContent>
     <DrawerHeader>
@@ -315,7 +315,7 @@ export default function OverlaysPage() {
       >
         <Drawer>
           <DrawerTrigger asChild>
-            <Button variant="outline">Open drawer</Button>
+            <Button variant="secondary">Open drawer</Button>
           </DrawerTrigger>
           <DrawerContent>
             <div className="mx-auto w-full max-w-sm">

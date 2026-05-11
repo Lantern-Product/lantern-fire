@@ -355,7 +355,7 @@ export function Hero3({
               <br />
               <span className="opacity-70">Design system</span>
             </div>
-            <Button asChild size="sm" variant="secondary" className="h-9 rounded-full px-4">
+            <Button asChild size="lg" variant="secondary-green" className="rounded-full">
               <Link href={ctaHref}>{ctaLabel}</Link>
             </Button>
           </div>

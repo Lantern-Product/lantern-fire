@@ -38,18 +38,20 @@ export default function ButtonsPage() {
 
       <Demo
         title="Variants"
-        description="Six visual styles for different emphasis levels."
-        code={`<Button variant="default">Default</Button>
-<Button variant="outline">Outline</Button>
+        description="Hierarchy first: Primary is the filled high-emphasis action; Secondary is the outlined companion. Secondary green and coral are filled accent variants — same hierarchy as primary, different color for distinct actions."
+        code={`<Button variant="primary">Primary</Button>
 <Button variant="secondary">Secondary</Button>
+<Button variant="secondary-green">Secondary green</Button>
+<Button variant="secondary-coral">Secondary coral</Button>
 <Button variant="ghost">Ghost</Button>
 <Button variant="destructive">Destructive</Button>
 <Button variant="destructive-solid">Destructive Solid</Button>
 <Button variant="link">Link</Button>`}
       >
-        <Button variant="default">Default</Button>
-        <Button variant="outline">Outline</Button>
+        <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
+        <Button variant="secondary-green">Secondary green</Button>
+        <Button variant="secondary-coral">Secondary coral</Button>
         <Button variant="ghost">Ghost</Button>
         <Button variant="destructive">Destructive</Button>
         <Button variant="destructive-solid">Destructive Solid</Button>
@@ -74,18 +76,18 @@ export default function ButtonsPage() {
         title="With icons"
         code={`<Button><PlusIcon /> Add item</Button>
 <Button variant="destructive-solid"><TrashIcon /> Delete</Button>
-<Button size="icon" variant="outline" aria-label="Add"><PlusIcon /></Button>`}
+<Button size="icon" variant="secondary" aria-label="Add"><PlusIcon /></Button>`}
       >
         <Button>
           <PlusIcon /> Add item
         </Button>
-        <Button variant="outline">
+        <Button variant="secondary">
           <DownloadIcon /> Download
         </Button>
         <Button variant="destructive-solid">
           <TrashIcon /> Delete
         </Button>
-        <Button size="icon" variant="outline" aria-label="Add">
+        <Button size="icon" variant="secondary" aria-label="Add">
           <PlusIcon />
         </Button>
         <Button size="icon-sm" variant="ghost" aria-label="Add">
@@ -95,13 +97,13 @@ export default function ButtonsPage() {
 
       <Demo
         title="Disabled"
-        code={`<Button disabled>Default</Button>
-<Button variant="outline" disabled>Outline</Button>
+        code={`<Button disabled>Primary</Button>
+<Button variant="secondary" disabled>Secondary</Button>
 <Button variant="destructive-solid" disabled>Delete</Button>`}
       >
-        <Button disabled>Default</Button>
-        <Button variant="outline" disabled>
-          Outline
+        <Button disabled>Primary</Button>
+        <Button variant="secondary" disabled>
+          Secondary
         </Button>
         <Button variant="destructive-solid" disabled>
           Delete
@@ -127,26 +129,26 @@ export default function ButtonsPage() {
         title="Button group"
         description="Joined buttons that share borders and focus styles."
         code={`<ButtonGroup>
-  <Button variant="outline"><ChevronLeftIcon /> Previous</Button>
-  <Button variant="outline">Next <ChevronRightIcon /></Button>
+  <Button variant="secondary"><ChevronLeftIcon /> Previous</Button>
+  <Button variant="secondary">Next <ChevronRightIcon /></Button>
 </ButtonGroup>`}
       >
         <ButtonGroup>
-          <Button variant="outline">
+          <Button variant="secondary">
             <ChevronLeftIcon /> Previous
           </Button>
-          <Button variant="outline">
+          <Button variant="secondary">
             Next <ChevronRightIcon />
           </Button>
         </ButtonGroup>
         <ButtonGroup>
-          <Button variant="outline" size="icon" aria-label="Bold">
+          <Button variant="secondary" size="icon" aria-label="Bold">
             <BoldIcon />
           </Button>
-          <Button variant="outline" size="icon" aria-label="Italic">
+          <Button variant="secondary" size="icon" aria-label="Italic">
             <ItalicIcon />
           </Button>
-          <Button variant="outline" size="icon" aria-label="Underline">
+          <Button variant="secondary" size="icon" aria-label="Underline">
             <UnderlineIcon />
           </Button>
           <ButtonGroupSeparator />
@@ -236,7 +238,7 @@ export default function ButtonsPage() {
         <Button disabled>
           <Spinner /> Saving…
         </Button>
-        <Button variant="outline" disabled>
+        <Button variant="secondary" disabled>
           <Spinner /> Refreshing
         </Button>
       </Demo>

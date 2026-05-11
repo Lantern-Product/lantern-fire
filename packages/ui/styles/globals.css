@@ -45,6 +45,8 @@
   --status-amber: oklch(0.716 0.165 70.08);
   --status-red: oklch(0.645 0.246 16.439);
   --status-purple: oklch(0.592 0.249 292.581);
+
+  --secondary-coral: oklch(0.68 0.19 25);
 }
 
 .dark {
@@ -87,6 +89,8 @@
   --status-amber: oklch(0.80 0.16 70);
   --status-red: oklch(0.72 0.23 16);
   --status-purple: oklch(0.72 0.22 292);
+
+  --secondary-coral: oklch(0.72 0.19 25);
 }
 
 @theme inline {
@@ -145,6 +149,8 @@
   --color-status-amber: var(--status-amber);
   --color-status-red: var(--status-red);
   --color-status-purple: var(--status-purple);
+
+  --color-secondary-coral: var(--secondary-coral);
 }
 
 @layer base {

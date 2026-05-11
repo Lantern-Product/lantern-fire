@@ -9,7 +9,7 @@ export function DividerWithButton() {
         <ContentBars rows={2} />
         <div className="my-8 flex items-center gap-3">
           <div className="h-px flex-1 bg-border" />
-          <Button size="sm" variant="outline">
+          <Button size="sm" variant="secondary">
             <PlusIcon /> Add section
           </Button>
           <div className="h-px flex-1 bg-border" />
