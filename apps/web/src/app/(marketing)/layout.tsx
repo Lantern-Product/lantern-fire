@@ -35,6 +35,12 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
             >
               Tokens
             </Link>
+            <Link
+              href="/releases"
+              className="hidden rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground sm:inline-flex"
+            >
+              Releases
+            </Link>
             <div className="ml-2 flex items-center gap-2">
               <ThemeToggle />
               <Button asChild size="sm">
