@@ -13,7 +13,7 @@
     "url": "git+https://github.com/Lantern-Product/lantern-fire.git",
     "directory": "packages/ui"
   },
-  "homepage": "https://github.com/Lantern-Product/lantern-fire#readme",
+  "homepage": "https://design.lantern.codes",
   "bugs": {
     "url": "https://github.com/Lantern-Product/lantern-fire/issues"
   },
