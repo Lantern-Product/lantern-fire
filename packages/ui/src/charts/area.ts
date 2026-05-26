@@ -1,0 +1,10 @@
+export { ChartAreaDefault } from "../components/charts/area/area-default";
+export { ChartAreaLinear } from "../components/charts/area/area-linear";
+export { ChartAreaStep } from "../components/charts/area/area-step";
+export { ChartAreaStacked } from "../components/charts/area/area-stacked";
+export { ChartAreaStackedExpand } from "../components/charts/area/area-stacked-expand";
+export { ChartAreaGradient } from "../components/charts/area/area-gradient";
+export { ChartAreaLegend } from "../components/charts/area/area-legend";
+export { ChartAreaAxes } from "../components/charts/area/area-axes";
+export { ChartAreaIcons } from "../components/charts/area/area-icons";
+export { ChartAreaInteractive } from "../components/charts/area/area-interactive";

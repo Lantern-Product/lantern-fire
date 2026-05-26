@@ -1,5 +1,23 @@
 # @lantern-product/ui
 
+## 0.3.0
+
+### Minor Changes
+
+- Add four chart-family subpath exports themed with Lantern OKLCH chart tokens — 42 ready-to-use Recharts recipes covering Area, Bar, Line, and Pie families. Each family ships as its own opt-in bundle so apps only pay for the chart types they import.
+
+  **Added**
+
+  - `@lantern-product/ui/charts/area` — 10 area chart variants (default, linear, step, stacked, stacked-expand, gradient, legend, axes, icons, interactive)
+  - `@lantern-product/ui/charts/bar` — 10 bar chart variants (default, horizontal, multiple, stacked, label, label-custom, mixed, active, negative, interactive)
+  - `@lantern-product/ui/charts/line` — 10 line chart variants (default, linear, step, multiple, dots, dots-colors, dots-custom, label, label-custom, interactive)
+  - `@lantern-product/ui/charts/pie` — 11 pie chart variants (simple, separator-none, label, label-custom, label-list, legend, donut, donut-active, donut-text, stacked, interactive)
+
+  **Docs**
+
+  - New top-level Charts section in the sidebar with an overview gallery at `/charts` and per-family pages at `/charts/{area,bar,line,pie}`.
+  - The Components > Data page no longer lists `ChartContainer`; primitives live on `@lantern-product/ui/chart`, recipes on `@lantern-product/ui/charts/{family}`.
+
 ## 0.2.0
 
 ### Minor Changes

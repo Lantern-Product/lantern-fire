@@ -50,6 +50,72 @@ export default defineConfig([
     },
   },
   {
+    // Composed chart recipes (area, bar, line, ...). Each chart family is its
+    // own subpath bundle so consumers only pay for the families they import.
+    entry: { "charts/area": "src/charts/area.ts" },
+    format: ["esm", "cjs"],
+    dts: true,
+    sourcemap: true,
+    treeshake: true,
+    splitting: false,
+    external: ["react", "react-dom", "react/jsx-runtime"],
+    esbuildOptions(options) {
+      options.legalComments = "inline";
+    },
+    async onSuccess() {
+      prependUseClient("charts/area.js");
+      prependUseClient("charts/area.cjs");
+    },
+  },
+  {
+    entry: { "charts/bar": "src/charts/bar.ts" },
+    format: ["esm", "cjs"],
+    dts: true,
+    sourcemap: true,
+    treeshake: true,
+    splitting: false,
+    external: ["react", "react-dom", "react/jsx-runtime"],
+    esbuildOptions(options) {
+      options.legalComments = "inline";
+    },
+    async onSuccess() {
+      prependUseClient("charts/bar.js");
+      prependUseClient("charts/bar.cjs");
+    },
+  },
+  {
+    entry: { "charts/line": "src/charts/line.ts" },
+    format: ["esm", "cjs"],
+    dts: true,
+    sourcemap: true,
+    treeshake: true,
+    splitting: false,
+    external: ["react", "react-dom", "react/jsx-runtime"],
+    esbuildOptions(options) {
+      options.legalComments = "inline";
+    },
+    async onSuccess() {
+      prependUseClient("charts/line.js");
+      prependUseClient("charts/line.cjs");
+    },
+  },
+  {
+    entry: { "charts/pie": "src/charts/pie.ts" },
+    format: ["esm", "cjs"],
+    dts: true,
+    sourcemap: true,
+    treeshake: true,
+    splitting: false,
+    external: ["react", "react-dom", "react/jsx-runtime"],
+    esbuildOptions(options) {
+      options.legalComments = "inline";
+    },
+    async onSuccess() {
+      prependUseClient("charts/pie.js");
+      prependUseClient("charts/pie.cjs");
+    },
+  },
+  {
     // Server-safe utilities (cn, etc.). NO "use client" — these are pure
     // functions that must be callable from React Server Components.
     entry: { utils: "src/utils.ts" },
