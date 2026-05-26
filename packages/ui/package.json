@@ -1,6 +1,6 @@
 {
   "name": "@lantern-product/ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Lantern Fire Design System — shadcn/ui primitives, tokens, and utilities.",
   "license": "MIT",
   "private": false,
@@ -45,6 +45,46 @@
         "default": "./dist/chart.cjs"
       }
     },
+    "./charts/area": {
+      "import": {
+        "types": "./dist/charts/area.d.ts",
+        "default": "./dist/charts/area.js"
+      },
+      "require": {
+        "types": "./dist/charts/area.d.cts",
+        "default": "./dist/charts/area.cjs"
+      }
+    },
+    "./charts/bar": {
+      "import": {
+        "types": "./dist/charts/bar.d.ts",
+        "default": "./dist/charts/bar.js"
+      },
+      "require": {
+        "types": "./dist/charts/bar.d.cts",
+        "default": "./dist/charts/bar.cjs"
+      }
+    },
+    "./charts/line": {
+      "import": {
+        "types": "./dist/charts/line.d.ts",
+        "default": "./dist/charts/line.js"
+      },
+      "require": {
+        "types": "./dist/charts/line.d.cts",
+        "default": "./dist/charts/line.cjs"
+      }
+    },
+    "./charts/pie": {
+      "import": {
+        "types": "./dist/charts/pie.d.ts",
+        "default": "./dist/charts/pie.js"
+      },
+      "require": {
+        "types": "./dist/charts/pie.d.cts",
+        "default": "./dist/charts/pie.cjs"
+      }
+    },
     "./utils": {
       "import": {
         "types": "./dist/utils.d.ts",
@@ -64,6 +104,18 @@
     "*": {
       "chart": [
         "./dist/chart.d.ts"
+      ],
+      "charts/area": [
+        "./dist/charts/area.d.ts"
+      ],
+      "charts/bar": [
+        "./dist/charts/bar.d.ts"
+      ],
+      "charts/line": [
+        "./dist/charts/line.d.ts"
+      ],
+      "charts/pie": [
+        "./dist/charts/pie.d.ts"
       ],
       "utils": [
         "./dist/utils.d.ts"

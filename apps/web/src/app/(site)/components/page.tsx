@@ -76,8 +76,8 @@ const groups = [
   {
     href: "/components/data",
     title: "Data",
-    description: "Tables, avatars, carousels, and chart primitives.",
-    components: ["Table", "Avatar", "Carousel", "ChartContainer"],
+    description: "Tables, avatars, and carousels for surfacing records and identity.",
+    components: ["Table", "Avatar", "Carousel"],
   },
 ];
 
@@ -87,7 +87,7 @@ export default function ComponentsIndexPage() {
       <PageHeader
         eyebrow="Components"
         title="Component library"
-        description="52 primitives across 7 categories. All components are tree-shakable, fully typed, and ship with sensible defaults."
+        description="51 primitives across 7 categories. All components are tree-shakable, fully typed, and ship with sensible defaults. Looking for data visualization? See Charts."
       />
       <div className="grid gap-4 sm:grid-cols-2">
         {groups.map((group) => (

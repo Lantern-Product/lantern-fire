@@ -31,7 +31,7 @@ export default function DataPage() {
       <PageHeader
         eyebrow="Components"
         title="Data display"
-        description="Surfaces for tabular data and identity. Charts ship from a separate subpath: @lantern-product/ui/chart."
+        description="Surfaces for tabular data and identity. For chart primitives and composed visualizations, see the Charts section."
       />
 
       <Demo

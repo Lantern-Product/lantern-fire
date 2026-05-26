@@ -33,6 +33,16 @@ const sections: NavSection[] = [
     ],
   },
   {
+    label: "Charts",
+    items: [
+      { label: "Overview", href: "/charts" },
+      { label: "Area charts", href: "/charts/area" },
+      { label: "Bar charts", href: "/charts/bar" },
+      { label: "Line charts", href: "/charts/line" },
+      { label: "Pie charts", href: "/charts/pie" },
+    ],
+  },
+  {
     label: "Application shells",
     items: [
       { label: "Overview", href: "/shells" },

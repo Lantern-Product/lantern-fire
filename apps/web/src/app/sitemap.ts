@@ -5,6 +5,11 @@ const SITE_URL =
 
 const STATIC_ROUTES = [
   "",
+  "/charts",
+  "/charts/area",
+  "/charts/bar",
+  "/charts/line",
+  "/charts/pie",
   "/components",
   "/components/buttons",
   "/components/cards",
