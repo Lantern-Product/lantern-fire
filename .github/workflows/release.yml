@@ -32,6 +32,20 @@ jobs:
           registry-url: https://registry.npmjs.org
           scope: "@lantern-product"
 
+      # actions/setup-node@v4 with `registry-url` writes ~/.npmrc with:
+      #   //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
+      #   always-auth=true
+      # When NODE_AUTH_TOKEN is unset (for OIDC Trusted Publishing), the
+      # substitution becomes a literal empty string and npm sends an empty
+      # Bearer token with each request — which the registry rejects with 404
+      # and which prevents npm's OIDC fallback from engaging. Strip the
+      # placeholder line so npm sees no token and triggers the OIDC exchange.
+      - name: Strip placeholder authToken from .npmrc for OIDC
+        run: |
+          if [ -f "$HOME/.npmrc" ]; then
+            sed -i '/_authToken=/d' "$HOME/.npmrc"
+          fi
+
       # npm Trusted Publishing (OIDC) requires npm CLI >= 11.5.1.
       # Node 20 ships with npm 10, so upgrade before the publish step.
       - name: Upgrade npm
@@ -39,6 +53,31 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # Diagnostic — surfaces auth state and OIDC env presence so failed
+      # publishes have clearer evidence than the registry's generic 404.
+      # Safe to keep around; nothing here prints secrets.
+      - name: Diagnostic — pre-publish state
+        run: |
+          echo "node: $(node --version)"
+          echo "npm:  $(npm --version)"
+          if [ -n "$ACTIONS_ID_TOKEN_REQUEST_URL" ]; then
+            echo "OIDC env: ACTIONS_ID_TOKEN_REQUEST_URL is present"
+          else
+            echo "OIDC env: ACTIONS_ID_TOKEN_REQUEST_URL is MISSING (id-token permission?)"
+          fi
+          echo "--- ~/.npmrc (auth values redacted) ---"
+          if [ -f "$HOME/.npmrc" ]; then
+            sed -E 's/(_authToken=).*$/\1[REDACTED]/' "$HOME/.npmrc"
+          else
+            echo "no ~/.npmrc present"
+          fi
+          echo "--- ./.npmrc (auth values redacted) ---"
+          if [ -f ".npmrc" ]; then
+            sed -E 's/(_authToken=).*$/\1[REDACTED]/' .npmrc
+          else
+            echo "no ./.npmrc present"
+          fi
 
       # No NPM_TOKEN here: npm CLI uses the GitHub OIDC token (id-token: write
       # permission above) to authenticate against npmjs.com via the Trusted
