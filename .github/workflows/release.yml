@@ -60,38 +60,6 @@ jobs:
             echo "NPM_CONFIG_USERCONFIG not set or file not present — nothing to strip"
           fi
 
-      # Diagnostic — surfaces auth state and OIDC env presence so failed
-      # publishes have clearer evidence than the registry's generic 404.
-      # Safe to keep around; nothing here prints secrets.
-      - name: Diagnostic — pre-publish state
-        run: |
-          echo "node: $(node --version)"
-          echo "npm:  $(npm --version)"
-          if [ -n "$ACTIONS_ID_TOKEN_REQUEST_URL" ]; then
-            echo "OIDC env: ACTIONS_ID_TOKEN_REQUEST_URL is present"
-          else
-            echo "OIDC env: ACTIONS_ID_TOKEN_REQUEST_URL is MISSING (id-token permission?)"
-          fi
-          echo "--- ~/.npmrc (auth values redacted) ---"
-          if [ -f "$HOME/.npmrc" ]; then
-            sed -E 's/(_authToken=).*$/\1[REDACTED]/' "$HOME/.npmrc"
-          else
-            echo "no ~/.npmrc present"
-          fi
-          echo "--- ./.npmrc (auth values redacted) ---"
-          if [ -f ".npmrc" ]; then
-            sed -E 's/(_authToken=).*$/\1[REDACTED]/' .npmrc
-          else
-            echo "no ./.npmrc present"
-          fi
-          echo "--- \$NPM_CONFIG_USERCONFIG (auth values redacted) ---"
-          echo "path: ${NPM_CONFIG_USERCONFIG:-(unset)}"
-          if [ -n "$NPM_CONFIG_USERCONFIG" ] && [ -f "$NPM_CONFIG_USERCONFIG" ]; then
-            sed -E 's/(_authToken=).*$/\1[REDACTED]/' "$NPM_CONFIG_USERCONFIG"
-          else
-            echo "NPM_CONFIG_USERCONFIG not set or file not present"
-          fi
-
       # No NPM_TOKEN here: npm CLI uses the GitHub OIDC token (id-token: write
       # permission above) to authenticate against npmjs.com via the Trusted
       # Publisher we configured for @lantern-product/ui.
