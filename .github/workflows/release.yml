@@ -65,6 +65,51 @@ jobs:
             echo "no ./.npmrc present"
           fi
 
+      # Diagnostic — decode the OIDC token claims GitHub Actions will send
+      # to npm. Lets us verify that the Trusted Publisher config on npm
+      # exactly matches the claims (repository, workflow_ref, environment).
+      # The JWT payload is base64url-encoded JSON — readable without the
+      # signing key. We deliberately only print public metadata claims
+      # (repository, ref, workflow_ref, environment, sub) and never the
+      # token itself or its signature.
+      - name: Diagnostic — OIDC token claims (for npm Trusted Publisher matching)
+        run: |
+          set -e
+          AUD="npm:registry.npmjs.org"
+          # Request an OIDC token for the npm audience.
+          RESPONSE=$(curl -sS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=${AUD}")
+          # The token has 3 dot-separated base64url segments; the middle is the payload.
+          JWT=$(echo "$RESPONSE" | node -e "let d=''; process.stdin.on('data',c=>d+=c).on('end',()=>console.log(JSON.parse(d).value))")
+          PAYLOAD_B64URL=$(echo "$JWT" | cut -d. -f2)
+          # base64url -> base64 (+/= padding)
+          PAYLOAD_B64=$(echo "$PAYLOAD_B64URL" | tr '_-' '/+')
+          # Add padding to multiple of 4
+          PADLEN=$(( (4 - ${#PAYLOAD_B64} % 4) % 4 ))
+          PAD=$(printf '=%.0s' $(seq 0 $PADLEN))
+          PAYLOAD_JSON=$(echo "${PAYLOAD_B64}${PAD}" | base64 -d 2>/dev/null || echo "{}")
+          echo "$PAYLOAD_JSON" | node -e "
+            let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{
+              const c=JSON.parse(d);
+              const safe={
+                iss:c.iss,
+                aud:c.aud,
+                repository:c.repository,
+                repository_owner:c.repository_owner,
+                ref:c.ref,
+                ref_type:c.ref_type,
+                event_name:c.event_name,
+                workflow:c.workflow,
+                workflow_ref:c.workflow_ref,
+                job_workflow_ref:c.job_workflow_ref,
+                environment:c.environment ?? '(none)',
+                sub:c.sub,
+              };
+              console.log('--- OIDC claims (subset; what npm Trusted Publisher matches against) ---');
+              console.log(JSON.stringify(safe,null,2));
+            });
+          "
+
       # No NPM_TOKEN here: npm CLI uses the GitHub OIDC token (id-token: write
       # permission above) to authenticate against npmjs.com via the Trusted
       # Publisher we configured for @lantern-product/ui.
