@@ -32,20 +32,6 @@ jobs:
           registry-url: https://registry.npmjs.org
           scope: "@lantern-product"
 
-      # actions/setup-node@v4 with `registry-url` writes ~/.npmrc with:
-      #   //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
-      #   always-auth=true
-      # When NODE_AUTH_TOKEN is unset (for OIDC Trusted Publishing), the
-      # substitution becomes a literal empty string and npm sends an empty
-      # Bearer token with each request — which the registry rejects with 404
-      # and which prevents npm's OIDC fallback from engaging. Strip the
-      # placeholder line so npm sees no token and triggers the OIDC exchange.
-      - name: Strip placeholder authToken from .npmrc for OIDC
-        run: |
-          if [ -f "$HOME/.npmrc" ]; then
-            sed -i '/_authToken=/d' "$HOME/.npmrc"
-          fi
-
       # npm Trusted Publishing (OIDC) requires npm CLI >= 11.5.1.
       # Node 20 ships with npm 10, so upgrade before the publish step.
       - name: Upgrade npm
