@@ -40,6 +40,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # actions/setup-node@v4 with `registry-url` writes a userconfig file
+      # at $NPM_CONFIG_USERCONFIG (typically /home/runner/work/_temp/.npmrc)
+      # containing:
+      #   //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
+      #   always-auth=true
+      # With NODE_AUTH_TOKEN unset (the OIDC pattern), ${NODE_AUTH_TOKEN}
+      # resolves to an empty string. npm reads the empty _authToken= and
+      # sends an empty Bearer header on PUT, which the registry rejects
+      # with 404 — and which prevents npm's OIDC fallback from engaging.
+      # Strip the placeholder line so npm sees no token and triggers the
+      # OIDC exchange via the Trusted Publisher we configured for the package.
+      - name: Strip placeholder authToken from $NPM_CONFIG_USERCONFIG for OIDC
+        run: |
+          if [ -n "$NPM_CONFIG_USERCONFIG" ] && [ -f "$NPM_CONFIG_USERCONFIG" ]; then
+            sed -i '/_authToken=/d' "$NPM_CONFIG_USERCONFIG"
+            echo "Stripped _authToken= from $NPM_CONFIG_USERCONFIG"
+          else
+            echo "NPM_CONFIG_USERCONFIG not set or file not present — nothing to strip"
+          fi
+
       # Diagnostic — surfaces auth state and OIDC env presence so failed
       # publishes have clearer evidence than the registry's generic 404.
       # Safe to keep around; nothing here prints secrets.
@@ -63,6 +83,13 @@ jobs:
             sed -E 's/(_authToken=).*$/\1[REDACTED]/' .npmrc
           else
             echo "no ./.npmrc present"
+          fi
+          echo "--- \$NPM_CONFIG_USERCONFIG (auth values redacted) ---"
+          echo "path: ${NPM_CONFIG_USERCONFIG:-(unset)}"
+          if [ -n "$NPM_CONFIG_USERCONFIG" ] && [ -f "$NPM_CONFIG_USERCONFIG" ]; then
+            sed -E 's/(_authToken=).*$/\1[REDACTED]/' "$NPM_CONFIG_USERCONFIG"
+          else
+            echo "NPM_CONFIG_USERCONFIG not set or file not present"
           fi
 
       # Diagnostic — decode the OIDC token claims GitHub Actions will send
