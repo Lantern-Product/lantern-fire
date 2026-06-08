@@ -82,6 +82,13 @@ const sections: NavSection[] = [
       { label: "Dividers", href: "/layout/divider" },
     ],
   },
+  {
+    label: "Overlays",
+    items: [
+      { label: "Overview", href: "/overlays" },
+      { label: "Drawers", href: "/overlays/drawers" },
+    ],
+  },
 ];
 
 export function SidebarNav() {
