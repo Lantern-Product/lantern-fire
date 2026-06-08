@@ -34,6 +34,8 @@ const STATIC_ROUTES = [
   "/layout/divider",
   "/layout/list-container",
   "/layout/media-object",
+  "/overlays",
+  "/overlays/drawers",
   "/shells",
   "/shells/multi-column",
   "/shells/sidebar",
